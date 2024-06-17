@@ -19,7 +19,7 @@ import SingleMessage from "./pages/SingleMessage";
 import Password from "./pages/Password";
 
 
-const serverURI = process.env.REACT_APP_BUDDIE_BACKEND_API || "http://localhost:4000"
+const serverURI = process.env.REACT_APP_BUDDIE_BACKEND_API
 const httpLink = new HttpLink({ uri: serverURI});
 
 let token = localStorage.getItem("id_token");
