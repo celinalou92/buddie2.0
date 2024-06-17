@@ -21,9 +21,6 @@ dist/
 build/
 out/
 
-# Static build output
-public/
-!public/*.html
 
 # Sass/CSS cache
 .sass-cache/

@@ -42,8 +42,6 @@ export const QUERY_USER = gql`
   query user($username: String!) {
     user(username: $username) {
       _id
-      first_name
-      last_name
       username
       email
       friendCount
@@ -66,8 +64,6 @@ export const QUERY_USERS = gql `
     users {
       _id
       username
-      first_name
-      last_name
       email
       tasks{
         
@@ -83,8 +79,6 @@ export const QUERY_ME = gql`
     me {
       _id
       username
-      first_name
-      last_name
       email
       friendCount
       tasks {
