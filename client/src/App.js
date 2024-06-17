@@ -18,7 +18,9 @@ import Taskboard from './pages/Taskboard';
 import SingleMessage from "./pages/SingleMessage";
 import Password from "./pages/Password";
 
-const httpLink = new HttpLink({ uri: process.env.REACT_APP_BUDDIE_BACKEND_API });
+
+const serverURI = process.env.REACT_APP_BUDDIE_BACKEND_API || "http://localhost:4000"
+const httpLink = new HttpLink({ uri: serverURI});
 
 let token = localStorage.getItem("id_token");
 
