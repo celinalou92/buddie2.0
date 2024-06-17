@@ -1,0 +1,36 @@
+{
+  "name": "mern-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "api/index.js",
+  "scripts": {
+    "start": "node api/index.js",
+    "watch": "nodemon api/index.js",
+    "seed": "node seeders/seeds.js",
+    "dropC": "node connection/dropCollection.js",
+    "mongoStart": "brew services start mongodb-community@7.0 serviceCheck",
+    "mongoStop": "brew services stop mongodb-community@7.0 serviceCheck",
+    "serviceCheck": "brew services list"
+  },
+  "type": "module",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@apollo/server": "^4.9.3",
+    "bcrypt": "^5.1.1",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "graphql": "^16.8.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^7.5.1",
+    "nodemon": "^3.1.3",
+    "rxjs": "^7.8.1"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^8.4.1",
+    "@types/jsonwebtoken": "^9.0.2",
+    "dotenv": "^16.3.1"
+  }
+}
