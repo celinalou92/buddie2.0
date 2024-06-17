@@ -8,6 +8,7 @@ const Signup = () => {
   const [addUser, { error, loading }] = useMutation(ADD_USER);
 
   const [formState, setFormState] = useState({
+    username: "",
     email: "",
     password: ""
   });
@@ -59,6 +60,18 @@ const Signup = () => {
       <div className={classes.paper}>
         <form className={classes.form} noValidate onSubmit={handleFormSubmit}>
           <Grid container spacing={2}>
+          <Grid item xs={12} sm={12}>
+              <TextField
+                variant="outlined"
+                required
+                fullWidth
+                id="username"
+                label="User Name"
+                name="username"
+                autoComplete="uname"
+                onChange={handleChange}
+              />
+            </Grid>
             <Grid item xs={12}>
               <TextField
                 variant="outlined"

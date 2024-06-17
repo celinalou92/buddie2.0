@@ -31,14 +31,11 @@ const typeDefs = `#graphql
   type User {
     _id: ID
     username: String
-    first_name: String
-    last_name: String
     email: String
     podID: [Pod]
     friendCount: Int
     tasks: [Task]
     messages: [Message]
-    friends: [User]
   }
 
   type Task {
@@ -61,8 +58,6 @@ const typeDefs = `#graphql
     addUser(
       username: String!
       email: String!
-      first_name: String
-      last_name: String
       password: String!
     ): Auth
     addTask(taskText: String!): Task

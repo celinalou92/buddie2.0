@@ -126,7 +126,9 @@ const resolvers = {
     addTask: async (parent, args, context) => {
       const userData = context.data;
 
-      if (userData.username) {
+      const user = await User.findOne({ username: userData.username });
+      
+      if (user) {
         const task = await Task.create({
           ...args,
           username: userData.username,
@@ -136,7 +138,7 @@ const resolvers = {
 
         await User.findOneAndUpdate(
           { _id: userData._id },
-          { $push: { tasks: task._id } },
+          { $push: { tasks: task } },
           { new: true }
         );
 
