@@ -7,9 +7,9 @@ import express from "express";
 import http from "http";
 import cors from "cors";
 import bodyParser from "body-parser";
-import { schemas } from "./schemas/index.js";
-import { authMiddleware } from "./utils/auth.js";
-import { runDBClient } from "./connection/index.js";
+import { schemas } from "../schemas/index.js";
+import { authMiddleware } from "../utils/auth.js";
+import { runDBClient } from "../connection/index.js";
 
 const app = express();
 export const httpServer = http.createServer(app);
