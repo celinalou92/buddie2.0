@@ -17,7 +17,8 @@ const Home = () => {
     },
   });
 
-  const tasks = data.me.tasks;
+  const tasks = data?.me.tasks || [];
+  
   console.log(tasks)
 
   if (!user || undefined) {
