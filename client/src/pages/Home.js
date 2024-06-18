@@ -1,5 +1,3 @@
-// import FriendList from "../components/FriendList";
-// import TaskForm from '../components/TaskForm';
 import Auth from "../utils/auth";
 import MessageList from "../components/MessageList";
 import MessageForm from "../components/MessageForm";
@@ -18,12 +16,11 @@ const Home = () => {
     );
   }
 
-
   return (
     <main>
       <Grid direction="row" container spacing={2}>
         <Grid item sm={6}>
-          <h2 className="heading">My Tasks</h2>
+          <h2 className="heading">{user.data.username} Tasks</h2>
           <div className={` flex-row compBorders scroller`}>
             <DashTask user={user}/>
           </div>
