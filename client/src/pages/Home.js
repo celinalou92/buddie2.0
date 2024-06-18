@@ -21,7 +21,7 @@ const Home = () => {
       <Grid direction="row" container spacing={2}>
         <Grid item sm={6}>
           <h2 className="heading">{user.data.username} Tasks</h2>
-          <div className={` flex-row compBorders scroller`}>
+          <div className="flex-row compBorders scroller">
             <DashTask user={user}/>
           </div>
         </Grid>

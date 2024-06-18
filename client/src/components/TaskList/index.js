@@ -2,8 +2,6 @@ import React from "react";
 import Toggler from "../Toggler";
 import AssignMenu from "../AssignMenu";
 import DeleteButton from "../DeleteButton";
-import Grid from "@material-ui/core/Grid";
-import ButtonBase from "@material-ui/core/ButtonBase";
 
 const TaskList = ({ tasks }) => {
   if (!tasks.length) {
@@ -13,29 +11,26 @@ const TaskList = ({ tasks }) => {
     <>
       {tasks &&
         tasks.map((task) => (
-          <Grid className="task-container" key={task._id}>
-            <Grid xs={12} sm={12} md={1} item className="taskItem">
-              <ButtonBase>
-                <div className="task-creator">
-                  {" "}
-                  <span className="mobile-display">Creator:</span>{" "}
-                  {task.username}
-                </div>
-              </ButtonBase>
-            </Grid>
-            <Grid item xs={12} sm={12} md={6} className="taskItem">
+          <div className="task-container" key={task._id}>
+            <div className="taskItem">
+              <div className="task-creator">
+                {" "}
+                <span className="mobile-display">Creator:</span> {task.username}
+              </div>
+            </div>
+            <div className="taskItem">
               <p className="taskText">{task.taskText}</p>
-            </Grid>
-            <Grid item xs={4} sm={4} md={1} className="taskItem">
+            </div>
+            <div className="taskItem">
               <Toggler task={task} />
-            </Grid>
-            <Grid item xs={4} sm={4} md={1} className="taskItem">
+            </div>
+            <div className="taskItem">
               <AssignMenu task={task} />
-            </Grid>
-            <Grid item xs={4} sm={4} md={1} className="taskItem">
+            </div>
+            <div className="taskItem">
               <DeleteButton task={task} />
-            </Grid>
-          </Grid>
+            </div>
+          </div>
         ))}
     </>
   );

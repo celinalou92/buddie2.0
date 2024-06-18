@@ -19,13 +19,10 @@ const MessageList = () => {
       {messages &&
         messages.map((message) => (
           <div key={message._id} className="">
-            {/* <Grid direction="column" container spacing={1} original-of-below-grid> */}
             <Grid  >
-              {/* <Grid container item sm={12} original-of-below-grid > */}
               <Grid >
                 <span className="nameStyle">{message.username}:</span> <span className="chatStyle">{message.messageText}</span>
               </Grid>
-              {/* <Grid container item sm={12} original-of-below-grid > */}
               <Grid container item sm={6}>
                 <Link
                   to={`/profile/${message.username}`}
