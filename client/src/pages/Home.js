@@ -17,7 +17,9 @@ const Home = () => {
     },
   });
 
-  const me = data;
+  const tasks = data.me.tasks;
+  console.log(tasks)
+
   if (!user || undefined) {
     return (
       <h4>
@@ -37,7 +39,7 @@ const Home = () => {
         <Grid item sm={6}>
           <h2 className="heading">My Tasks</h2>
           <div className={` flex-row compBorders scroller`}>
-            <DashTask user={user}/>
+            <DashTask tasks={tasks}/>
           </div>
         </Grid>
         <Grid item sm={6}>

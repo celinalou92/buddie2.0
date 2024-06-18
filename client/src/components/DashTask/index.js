@@ -15,7 +15,7 @@ const DashTask = ({ tasks, username, setShouldUpdate }) => {
       {tasks &&
         tasks.map((task) => (
           <Grid container className="" key={task._id}>
-            {/* <Grid xs={12} sm={12} md={1} item className="taskItem">
+            <Grid xs={12} sm={12} md={1} item className="taskItem">
               <ButtonBase>
                 <div className="task-creator">
                   {" "}
@@ -23,19 +23,16 @@ const DashTask = ({ tasks, username, setShouldUpdate }) => {
                   {task.username}
                 </div>
               </ButtonBase>
-            </Grid> */}
+            </Grid>
             <Grid item xs={12} sm={12} md={12} className="">
               <p className="myTaskStyle"><span className="myTaskIcon"><ListAltIcon></ListAltIcon></span>{task.taskText}</p>
             </Grid>
-            {/* <Grid item xs={4} sm={4} md={1} className="">
+            <Grid item xs={4} sm={4} md={12} className="">
               <Toggler task={task} setShouldUpdate={setShouldUpdate} />
-            </Grid> */}
-            {/* <Grid item xs={4} sm={4} md={1} className="taskItem">
-              <AssignMenu task={task} setShouldUpdate={setShouldUpdate} />
-            </Grid> */}
-            {/* <Grid item xs={4} sm={4} md={1} className="taskItem">
+            </Grid>
+            <Grid item xs={4} sm={4} md={12} className="taskItem">
               <DeleteButton task={task} setShouldUpdate={setShouldUpdate} />
-            </Grid> */}
+            </Grid>
           </Grid>
         ))}
     </div>
