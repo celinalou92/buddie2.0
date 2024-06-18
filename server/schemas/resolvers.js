@@ -49,11 +49,15 @@ const resolvers = {
         .populate("messages");
     },
     messages: async () => {
-      return Message.find().sort({ createdAt: -1 });
+      return Message.find()
+      .sort({ createdAt: -1 })
+      .populate("replies")
+      .populate("replyCount")
+      ;
     },
     // find a single thought
     message: async (parent, { _id }) => {
-      return Message.findOne({ _id });
+      return Message.findOne({_id: _id});
     },
 
     // -------------- get a user by username -------------- //
@@ -193,6 +197,8 @@ const resolvers = {
     },
     addReply: async (parent, { messageId, replyBody }, context) => {
       const userData = context.data;
+      console.log(userData)
+      console.log(messageId, replyBody)
       if (userData.username) {
         const updatedMessage = await Message.findOneAndUpdate(
           { _id: messageId },

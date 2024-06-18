@@ -2,17 +2,19 @@ import { useParams } from "react-router-dom";
 import React from "react";
 import { useQuery } from "@apollo/client";
 import { QUERY_MESSAGE } from "../utils/queries";
-import ReactionForm from "../components/ReactionForm";
+import ReplyForm from "../components/ReplyForm";
 import ReactionList from "../components/ReactionList";
 import Auth from "../utils/auth";
 import Grid from "@material-ui/core/Grid";
 import MessageList from "../components/MessageList";
 
 const SingleMessage = (props) => {
-  const { id: messageId } = useParams();
+  const { id } = useParams();
 
   const { loading, data } = useQuery(QUERY_MESSAGE, {
-    variables: { id: messageId },
+    variables: {
+      id: id,
+    },
   });
 
   const message = data?.message || {};
@@ -22,7 +24,6 @@ const SingleMessage = (props) => {
   }
 
   return (
-    
     <Grid
       direction="row"
       container
@@ -43,7 +44,7 @@ const SingleMessage = (props) => {
         <Grid container item sm={12} alignItems="flex-start" justify="center">
           {message.replyCount > 0 && <ReactionList replies={message.replies} />}
         </Grid>
-        {Auth.loggedIn() && <ReactionForm messageId={message._id} />}
+        {Auth.loggedIn() && <ReplyForm messageId={message._id} />}
       </div>
     </Grid>
   );

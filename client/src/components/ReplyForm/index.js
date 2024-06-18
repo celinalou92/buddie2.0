@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useMutation } from "@apollo/client";
 import { ADD_REACTION, ADD_REPLY } from "../../utils/mutations";
 
-const ReactionForm = ({ messageId }) => {
+const ReplyForm = ({ messageId }) => {
   // adding state
   const [replyBody, setBody] = useState("");
   const [characterCount, setCharacterCount] = useState(0);
@@ -55,4 +55,4 @@ const ReactionForm = ({ messageId }) => {
   );
 };
 
-export default ReactionForm;
+export default ReplyForm;

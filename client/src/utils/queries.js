@@ -27,9 +27,9 @@ export const QUERY_TASK = gql`
   }
 `;
 
-export const QUERY_USERS_TASKS = gql `
-  query usersTasks($assignedID: String!){
-      usersTasks(assignedID: $assignedID) {
+export const QUERY_USERS_TASKS = gql`
+  query usersTasks($assignedID: String!) {
+    usersTasks(assignedID: $assignedID) {
       taskText
       taskStatus
       createdAt
@@ -59,14 +59,13 @@ export const QUERY_USER = gql`
   }
 `;
 
-export const QUERY_USERS = gql `
+export const QUERY_USERS = gql`
   query {
     users {
       _id
       username
       email
-      tasks{
-        
+      tasks {
         taskText
         taskStatus
       }
@@ -154,19 +153,16 @@ export const QUERY_MESSAGES = gql`
 `;
 
 export const QUERY_MESSAGE = gql`
-  query message($id: ID!) {
+  query Message($id: ID!) {
     message(_id: $id) {
-      _id
       messageText
-      createdAt
-      username
-      replyCount
       replies {
-        _id
-        createdAt
-        username
         replyBody
+        username
+        _id
       }
+      username
+      _id
     }
   }
 `;

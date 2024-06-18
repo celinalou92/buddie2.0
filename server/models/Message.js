@@ -28,7 +28,7 @@ export const messageSchema = new Schema(
   }
 );
 
-messageSchema.virtual("replyCount").get(function () {
+messageSchema.virtual("replyCount").get(function (replies) {
   if(replies){
     return this.replies.length
   }
