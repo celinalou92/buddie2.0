@@ -22,8 +22,8 @@ const DashTask = ({ user, setShouldUpdate }) => {
     <div>
       {tasks &&
         tasks.map((task) => (
-          <div className="taskItem">
-            <p className="myTaskStyle">
+          <div className="taskItem"  key={task._id}>
+            <p className="taskItem">
               <span className="myTaskIcon">
                 <ListAltIcon></ListAltIcon>
               </span>
