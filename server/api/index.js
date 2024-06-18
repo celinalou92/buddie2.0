@@ -45,7 +45,10 @@ const StartApolloServer = async () => {
   
   app.use(
     "/",
-    cors(),
+    cors({
+      origin: "https://buddie2-0.vercel.app",
+      credentials: true,
+    }),
     bodyParser.json(),
     expressMiddleware(server, {
       context: authMiddleware,
