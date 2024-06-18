@@ -51,9 +51,7 @@ const resolvers = {
     messages: async () => {
       return Message.find()
       .sort({ createdAt: -1 })
-      .populate("replies")
-      .populate("replyCount")
-      ;
+      .populate("replies");
     },
     // find a single thought
     message: async (parent, { _id }) => {

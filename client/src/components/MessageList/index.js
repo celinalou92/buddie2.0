@@ -8,7 +8,6 @@ import { useQuery } from "@apollo/client";
 
 const MessageList = () => {
   const { data } = useQuery(QUERY_MESSAGES);
-
   const messages = data?.messages || [];
 
   if (!messages.length) {
