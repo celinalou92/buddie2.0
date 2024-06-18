@@ -1,16 +1,9 @@
 import React from "react";
-// -----------------------------  components ----------------------------- //
 import Toggler from "../Toggler";
 import AssignMenu from "../AssignMenu";
 import DeleteButton from "../DeleteButton";
-// -----------------------------  task list styles ----------------------------- //
-
 import Grid from "@material-ui/core/Grid";
 import ButtonBase from "@material-ui/core/ButtonBase";
-
-// -----------------------------  task list styles ----------------------------- //
-
-// -----------------------------  task list styles ----------------------------- //
 
 const TaskList = ({ tasks }) => {
   if (!tasks.length) {

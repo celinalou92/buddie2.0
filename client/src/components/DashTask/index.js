@@ -1,15 +1,26 @@
-import React from 'react';
-import ListAltIcon from '@material-ui/icons/ListAlt';
-// -----------------------------  components ----------------------------- //
-import Toggler from '../Toggler';
-import AssignMenu from '../AssignMenu';
-import DeleteButton from '../DeleteButton';
-// -----------------------------  task list styles ----------------------------- //
+import React from "react";
+import ListAltIcon from "@material-ui/icons/ListAlt";
+import Toggler from "../Toggler";
+import AssignMenu from "../AssignMenu";
+import DeleteButton from "../DeleteButton";
+import { QUERY_ME } from "../../utils/queries";
+import { useQuery } from "@apollo/client";
+import {ButtonBase, Grid} from "@material-ui/core";
 
-import Grid from '@material-ui/core/Grid';
-import ButtonBase from '@material-ui/core/ButtonBase';
+const DashTask = ({  user, setShouldUpdate }) => {
+  
+  const { loading, data } = useQuery(QUERY_ME, {
+    variables: {
+      id: user.data._id,
+    },
+  });
 
-const DashTask = ({ tasks, username, setShouldUpdate }) => {
+  const tasks = data?.me.tasks || [];
+
+  if (!tasks.length) {
+    return <h3>You don't have any tasks!</h3>;
+  }
+
   return (
     <div>
       {tasks &&
@@ -25,7 +36,12 @@ const DashTask = ({ tasks, username, setShouldUpdate }) => {
               </ButtonBase>
             </Grid>
             <Grid item xs={12} sm={12} md={12} className="">
-              <p className="myTaskStyle"><span className="myTaskIcon"><ListAltIcon></ListAltIcon></span>{task.taskText}</p>
+              <p className="myTaskStyle">
+                <span className="myTaskIcon">
+                  <ListAltIcon></ListAltIcon>
+                </span>
+                {task.taskText}
+              </p>
             </Grid>
             <Grid item xs={4} sm={4} md={12} className="">
               <Toggler task={task} setShouldUpdate={setShouldUpdate} />
