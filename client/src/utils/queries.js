@@ -74,21 +74,17 @@ export const QUERY_USERS = gql`
 `;
 
 export const QUERY_ME = gql`
-  {
+  query Me {
     me {
       _id
-      username
       email
-      friendCount
+      messages {
+        messageText
+      }
       tasks {
         taskText
-        taskStatus
-        assignedID
-        createdAt
-      }
-      friends {
-        _id
         username
+        taskStatus
       }
     }
   }
