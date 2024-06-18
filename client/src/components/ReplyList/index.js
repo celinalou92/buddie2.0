@@ -2,7 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Grid from "@material-ui/core/Grid";
 
-const ReactionList = ({ replies }) => {
+const ReplyList = ({ replies }) => {
+  console.log("reply list",replies)
   return (
     <div>
       <span className="">Replies</span>
@@ -25,4 +26,4 @@ const ReactionList = ({ replies }) => {
   );
 };
 
-export default ReactionList;
+export default ReplyList;

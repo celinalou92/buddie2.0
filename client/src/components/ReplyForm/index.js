@@ -3,7 +3,6 @@ import { useMutation } from "@apollo/client";
 import { ADD_REACTION, ADD_REPLY } from "../../utils/mutations";
 
 const ReplyForm = ({ messageId }) => {
-  // adding state
   const [replyBody, setBody] = useState("");
   const [characterCount, setCharacterCount] = useState(0);
   const [addReply, { error }] = useMutation(ADD_REPLY);

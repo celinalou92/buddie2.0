@@ -3,7 +3,7 @@ import React from "react";
 import { useQuery } from "@apollo/client";
 import { QUERY_MESSAGE } from "../utils/queries";
 import ReplyForm from "../components/ReplyForm";
-import ReactionList from "../components/ReactionList";
+import ReplyList from "../components/ReplyList";
 import Auth from "../utils/auth";
 import Grid from "@material-ui/core/Grid";
 import MessageList from "../components/MessageList";
@@ -42,7 +42,7 @@ const SingleMessage = (props) => {
           <div className="messageDate">{message.createdAt}</div>
         </Grid>
         <Grid container item sm={12} alignItems="flex-start" justify="center">
-          {message.replyCount > 0 && <ReactionList replies={message.replies} />}
+          {message.replies.length > 0 && <ReplyList replies={message.replies} />}
         </Grid>
         {Auth.loggedIn() && <ReplyForm messageId={message._id} />}
       </div>
