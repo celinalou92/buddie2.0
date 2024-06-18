@@ -18,7 +18,6 @@ import Taskboard from './pages/Taskboard';
 import SingleMessage from "./pages/SingleMessage";
 import Password from "./pages/Password";
 
-
 const serverURI = process.env.REACT_APP_BACKEND_URI;
 const httpLink = new HttpLink({ uri: serverURI});
 
