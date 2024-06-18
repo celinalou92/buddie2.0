@@ -7,9 +7,9 @@ import express from "express";
 import http from "http";
 import cors from "cors";
 import bodyParser from "body-parser";
-import { schemas } from "../schemas/index.js";
-import { authMiddleware } from "../utils/auth.js";
-import { runDBClient } from "../connection/index.js";
+import { schemas } from "./schemas/index.js";
+import { authMiddleware } from "./utils/auth.js";
+import { runDBClient } from "./connection/index.js";
 
 const app = express();
 export const httpServer = http.createServer(app);
@@ -46,7 +46,7 @@ const StartApolloServer = async () => {
   app.use(
     "/",
     cors({
-      origin: "https://buddie2-0.vercel.app",
+      origin: ["http://localhost:3000/","https://buddie2-0.vercel.app"],
       credentials: true,
     }),
     bodyParser.json(),
