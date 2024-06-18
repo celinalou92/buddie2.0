@@ -43,7 +43,10 @@ const resolvers = {
     },
     // -------------- get all users -------------- //
     users: async (context) => {
-      return User.find().select("-__v -password").populate("tasks");
+      return User.find()
+        .select("-__v -password")
+        .populate("tasks")
+        .populate("messages");
     },
     messages: async () => {
       return Message.find().sort({ createdAt: -1 });
@@ -91,17 +94,20 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
-    
+
     addMessage: async (parent, args, context) => {
       const userData = context.data;
-
       if (userData.username) {
         const message = await Message.create({
           ...args,
           username: userData.username,
         });
 
-        await User.findOneAndUpdate({ _id: userData._id }, { new: true });
+        await User.findOneAndUpdate(
+          { _id: userData._id },
+          { $push: { messages: message } },
+          { new: true }
+        );
         return message;
       }
       throw new Error("You need to be logged in!");
@@ -127,7 +133,7 @@ const resolvers = {
       const userData = context.data;
 
       const user = await User.findOne({ username: userData.username });
-      
+
       if (user) {
         const task = await Task.create({
           ...args,
