@@ -49,13 +49,11 @@ const resolvers = {
         .populate("messages");
     },
     messages: async () => {
-      return Message.find()
-      .sort({ createdAt: -1 })
-      .populate("replies");
+      return Message.find().sort({ createdAt: -1 }).populate("replies");
     },
     // find a single thought
     message: async (parent, { _id }) => {
-      return Message.findOne({_id: _id});
+      return Message.findOne({ _id: _id });
     },
 
     // -------------- get a user by username -------------- //
@@ -123,7 +121,7 @@ const resolvers = {
         });
         await User.findByIdAndUpdate(
           { _id: userData._id },
-          { $pull: { message: message._id } }
+          { $pull: { messages: { _id: message._id } } }
           // { new: true }
         );
         return message;
@@ -163,7 +161,7 @@ const resolvers = {
 
         await User.findByIdAndUpdate(
           { _id: userData._id },
-          { $pull: { tasks: task._id } }
+          { $pull: { tasks: { _id: task._id } } }
         );
         return task;
       }
@@ -195,8 +193,8 @@ const resolvers = {
     },
     addReply: async (parent, { messageId, replyBody }, context) => {
       const userData = context.data;
-      console.log(userData)
-      console.log(messageId, replyBody)
+      console.log(userData);
+      console.log(messageId, replyBody);
       if (userData.username) {
         const updatedMessage = await Message.findOneAndUpdate(
           { _id: messageId },
