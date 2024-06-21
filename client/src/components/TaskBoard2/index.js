@@ -39,7 +39,7 @@ const Taskboard2 = () => {
           <p>Delete</p>
         </Grid>
       </Grid>
-      <Grid container className="taskListContainer">
+      <Grid container className="taskListContainer scroller">
         {loading ? (
           <div>Loading your Pod's tasks</div>
         ) : (

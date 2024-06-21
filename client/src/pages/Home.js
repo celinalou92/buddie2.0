@@ -30,14 +30,14 @@ const Home = () => {
       <Grid direction="row" container spacing={2}>
         <Grid item sm={6} className="scroller py-4">
           <h2 className="heading">Viewing Your Pod's Tasks</h2>
-          <TaskBoard2/>
+          <TaskBoard2 />
         </Grid>
         <Grid item sm={6}>
           <h2 className="heading">Messages</h2>
-            <div className="compBorders scroller flex-column justify-space-between alig">
-              <MessageList />
-              <MessageForm />
-            </div>
+          <div className="compBorders scroller flex-column justify-space-between alig">
+            <MessageList />
+          </div>
+          <MessageForm />
         </Grid>
       </Grid>
     </main>

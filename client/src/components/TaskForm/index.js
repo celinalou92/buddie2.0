@@ -2,12 +2,10 @@ import React, { useState } from "react";
 import { useMutation } from "@apollo/client";
 import { ADD_TASK } from "../../utils/mutations";
 import { QUERY_TASKS } from "../../utils/queries";
-// because tasks are contained in a array we are going to use the query below to update the cache and return new tasks submitted in the form, QUERY_ME is being used on the profile page instead of Query taskS so we need to have both
 
 const TaskForm = () => {
   const [taskText, setText] = useState("");
   const [characterCount, setCharacterCount] = useState(0);
-  // const  [addTask, { error }] = useMutation(ADD_TASK);
 
 
   const [addTask, { error }] = useMutation(ADD_TASK, {
@@ -15,9 +13,7 @@ const TaskForm = () => {
       try {
         // read what's currently in the cache
         const { tasks } = cache.readQuery({ query: QUERY_TASKS });
-
         // prepend the newest task to the front of the array
-        // TODO: getting console err because missing field taskstatus which is added in the back end
         cache.writeQuery({
           query: QUERY_TASKS,
           data: { tasks: [addTask, ...tasks] },
@@ -28,7 +24,6 @@ const TaskForm = () => {
     },
   });
 
-  // update state based on form input changes
   const handleChange = (event) => {
     if (event.target.value.length <= 280) {
       setText(event.target.value);
@@ -36,15 +31,14 @@ const TaskForm = () => {
     }
   };
 
-  // submit form
+
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     try {
-      // add task to database
       await addTask({
         variables: { taskText: taskText },
       });
-      // clear form value
+
       setText("");
       setCharacterCount(0);
     } catch (error) {
@@ -55,7 +49,7 @@ const TaskForm = () => {
   return (
     <div>
       <p
-        className={`m-0 ${characterCount === 280 || error ? "text-error" : ""}`}
+        className={`m-1 ${characterCount === 280 || error ? "text-error" : ""}`}
       >
         Character Count: {characterCount}/280
         {error && <span className="ml-2">Something went wrong...</span>}

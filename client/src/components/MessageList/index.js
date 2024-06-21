@@ -19,7 +19,7 @@ const MessageList = () => {
       {messages &&
         messages.map((message) => (
           <div key={message._id} className="">
-            <Grid  >
+            <Grid >
               <Grid >
                 <span className="nameStyle">{message.username}:</span> <span className="chatStyle">{message.messageText}</span>
               </Grid>

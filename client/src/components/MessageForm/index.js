@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useMutation } from "@apollo/client";
 import { ADD_MESSAGE } from "../../utils/mutations";
-import { QUERY_MESSAGES, QUERY_ME } from "../../utils/queries";
+import { QUERY_MESSAGES } from "../../utils/queries";
 import SendIcon from '@material-ui/icons/Send';
 
 const MessageForm = () => {
@@ -21,15 +21,6 @@ const MessageForm = () => {
       } catch (e) {
         console.log(e);
       }
-
-      // update me object's cache, appending new thought to the end of the array
-
-      //need to fix Me page in order for this to work
-      //   const { me } = cache.readQuery({ query: QUERY_ME });
-      //   cache.writeQuery({
-      //     query: QUERY_ME,
-      //     data: { me: { ...me, messages: [...me.messages, addMessage] } },
-      //   });
     },
   });
 
@@ -55,21 +46,21 @@ const MessageForm = () => {
   };
 
   return (
-    <div className="chatForm">
+    <div >
       <p
-        className={`chatStyle ${characterCount === 280 || error ? "text-error" : ""}`}
+        className={`m-1 ${characterCount === 280 || error ? "text-error" : ""}`}
       >
         Character Count: {characterCount}/280
         {error && <span className="ml-2">Something went wrong...</span>}
       </p>
       <form
-        className="flex-row justify-space-between-submit "
+        className="flex-row justify-center justify-space-between-md align-stretch"
         onSubmit={handleFormSubmit}
       >
         <textarea
           placeholder="Type a message"
           value={messageText}
-          className="form-input col-md-9"
+          className="form-input  col-md-9"
           onChange={handleChange}
         ></textarea>
   
