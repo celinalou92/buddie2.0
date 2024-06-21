@@ -75,7 +75,7 @@ const Taskboard = () => {
           {loading ? (
             <div>Loading your Pod's tasks</div>
           ) : (
-            <TaskRow tasks={tasks} username={`${user.username}'s tasks...`} />
+            <TaskRow tasks={tasks}/>
           )}
           <br />
         </Grid>
