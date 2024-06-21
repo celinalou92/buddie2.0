@@ -16,14 +16,11 @@ const TaskList = ({ tasks }) => {
         tasks.map((task) => (
           <div key={task._id} className="taskRow">
             <Grid container >
+              <Grid md={4} className="taskCell">
+                <AssignMenu task={task} />
+              </Grid>
               <Grid md={6} className="taskCell">
                 <p>{task.taskText}</p>
-              </Grid>
-              <Grid md={2} className="taskCell">
-                <Toggler task={task} />
-              </Grid>
-              <Grid md={2} className="taskCell">
-                <AssignMenu task={task} />
               </Grid>
               <Grid md={2} className="taskCell">
                 <DeleteButton task={task} />

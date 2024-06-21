@@ -23,7 +23,7 @@ const Toggler = ({ task }) => {
         <button className="statusBtn" 
         onClick={toggleStatus}
         >
-            {task.taskStatus ? "👍🏼" : "👎🏼"}
+            {task.taskStatus ? "Working!" : "Not Started"}
         </button>
     )
 }

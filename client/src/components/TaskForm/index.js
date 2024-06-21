@@ -54,7 +54,6 @@ const TaskForm = () => {
 
   return (
     <div>
-      <h1>Task Form </h1>
       <p
         className={`m-0 ${characterCount === 280 || error ? "text-error" : ""}`}
       >

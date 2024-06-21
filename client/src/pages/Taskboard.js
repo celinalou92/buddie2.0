@@ -59,16 +59,16 @@ const Taskboard = () => {
         <br />
         <Grid container id="taskListContainer">
           <Grid container id="taskListHeader" className={classes.paper}>
-            <Grid item sm={6}>
+            <Grid item md={6}>
               <p>Task</p>
             </Grid>
-            <Grid item sm={2}>
+            {/* <Grid item sm={2}>
               <p>Status</p>
-            </Grid>
-            <Grid item sm={2}>
+            </Grid> */}
+            <Grid item md={4}>
               <p>Assign</p>
             </Grid>
-            <Grid item sm={2}>
+            <Grid item md={2}>
               <p>Delete</p>
             </Grid>
           </Grid>
