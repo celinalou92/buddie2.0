@@ -1,11 +1,21 @@
 import Auth from "../utils/auth";
 import MessageList from "../components/MessageList";
 import MessageForm from "../components/MessageForm";
-import DashTask from "../components/DashTask";
+import TaskRow from "../components/TaskRow";
 import Grid from "@material-ui/core/Grid";
+
+import { QUERY_ME } from "../utils/queries";
+import { useQuery } from "@apollo/client";
 
 const Home = () => {
   const user = Auth.loggedIn();
+  const { data } = useQuery(QUERY_ME, {
+    variables: {
+      id: user.data._id,
+    },
+  });
+
+  const tasks = data?.me.tasks || [];
 
   if (!user || undefined) {
     return (
@@ -21,22 +31,16 @@ const Home = () => {
       <Grid direction="row" container spacing={2}>
         <Grid item sm={6}>
           <h2 className="heading">{user.data.username} Tasks</h2>
-          <div className="flex-row compBorders scroller">
-            <DashTask user={user}/>
+          <div className="compBorders scroller py-4">
+            <TaskRow tasks={tasks} />
           </div>
         </Grid>
         <Grid item sm={6}>
-          <div className=" ">
-            <h2 className="heading">Messages</h2>
-            <div className={` ${user}`}>
-              <div className="compBorders scroller">
-                <MessageList />
-              </div>
-              <div className="col-12 mb-3">
-                <MessageForm />
-              </div>
+          <h2 className="heading">Messages</h2>
+            <div className="compBorders scroller flex-column justify-space-between alig">
+              <MessageList />
+              <MessageForm />
             </div>
-          </div>
         </Grid>
       </Grid>
     </main>

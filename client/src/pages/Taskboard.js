@@ -1,5 +1,5 @@
 import React from "react";
-import TaskList from "../components/TaskList";
+import TaskRow from "../components/TaskRow";
 import TaskForm from "../components/TaskForm";
 import { useQuery } from "@apollo/client";
 import { QUERY_TASKS } from "../utils/queries";
@@ -57,30 +57,25 @@ const Taskboard = () => {
       <Container maxWidth="lg">
         <h1>Viewing Your Pod's Taskboard.</h1>
         <br />
-        <Grid id="taskListContainer" container>
-          <Grid item container>
-            <Grid item container id="taskListHeader" className={classes.paper}>
-              <Grid item sm={1} className="headerItem">
-                <p>Creator</p>
-              </Grid>
-              <Grid item sm={6} className="headerItem">
-                <p>Task</p>
-              </Grid>
-              <Grid item sm={1} className="headerItem">
-                <p>Status</p>
-              </Grid>
-              <Grid item sm={1} className="headerItem">
-                <p>Assign</p>
-              </Grid>
-              <Grid item sm={1} className="headerItem">
-                <p>Delete</p>
-              </Grid>
+        <Grid container id="taskListContainer">
+          <Grid container id="taskListHeader" className={classes.paper}>
+            <Grid item sm={6}>
+              <p>Task</p>
+            </Grid>
+            <Grid item sm={2}>
+              <p>Status</p>
+            </Grid>
+            <Grid item sm={2}>
+              <p>Assign</p>
+            </Grid>
+            <Grid item sm={2}>
+              <p>Delete</p>
             </Grid>
           </Grid>
           {loading ? (
             <div>Loading your Pod's tasks</div>
           ) : (
-            <TaskList tasks={tasks} username={`${user.username}'s tasks...`} />
+            <TaskRow tasks={tasks} username={`${user.username}'s tasks...`} />
           )}
           <br />
         </Grid>
