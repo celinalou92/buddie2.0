@@ -7,7 +7,7 @@ import AuthService from "../..//utils/auth";
 import Grid from "@material-ui/core/Grid";
 
 
-const Taskboard2 = () => {
+const Taskboard = () => {
   const { loading, data } = useQuery(QUERY_TASKS);
 
   const tasks = data?.tasks || [];
@@ -52,4 +52,4 @@ const Taskboard2 = () => {
   );
 };
 
-export default Taskboard2;
+export default Taskboard;

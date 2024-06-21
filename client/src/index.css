@@ -243,7 +243,7 @@ font-family: 'Thasadith', sans-serif;
 }
 
 /* ------------------------------------------- Taskboard Styles --------------------------------------- */
-/* linear-gradient(92deg, #f3cb2e, #ecb252, #f57972); */
+
 .deleteBtn {
   background-color: #f50057;
   width: 56px;
@@ -276,16 +276,14 @@ font-family: 'Thasadith', sans-serif;
   background-color:  #c51162;
 }
 
-/* .assign-input {
+.assign-input {
   border-radius: 4px;
-  background-color: #f0f0f0;
   font-family: 'Thasadith', sans-serif;
   border: 1px solid #ced4da;
-  font-size: 16;
+  font-size: 1rem;
   font-weight: 700;
-  padding: 5px 26px 5px 12px;
-  max-width: 80px;
-} */
+  padding: 5px 26px 5px 12px;  
+}
 
 
 .taskListHeader {

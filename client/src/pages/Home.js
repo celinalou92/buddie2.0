@@ -4,7 +4,7 @@ import MessageForm from "../components/MessageForm";
 import Grid from "@material-ui/core/Grid";
 import { QUERY_ME } from "../utils/queries";
 import { useQuery } from "@apollo/client";
-import TaskBoard2 from "../components/TaskBoard2";
+import TaskBoard from "../components/TaskBoard";
 
 const Home = () => {
   const user = Auth.loggedIn();
@@ -30,7 +30,7 @@ const Home = () => {
       <Grid direction="row" container spacing={2}>
         <Grid item sm={6} className="scroller py-4">
           <h2 className="heading">Viewing Your Pod's Tasks</h2>
-          <TaskBoard2 />
+          <TaskBoard />
         </Grid>
         <Grid item sm={6}>
           <h2 className="heading">Messages</h2>
