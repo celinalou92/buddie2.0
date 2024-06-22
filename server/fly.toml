@@ -1,4 +1,4 @@
-# fly.toml app configuration file generated for buddie-server-floral-surf-7758 on 2024-06-21T18:00:40-07:00
+# fly.toml app configuration file generated for buddie-server on 2024-06-22T11:06:34-07:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
@@ -14,11 +14,11 @@ primary_region = 'sjc'
   auto_stop_machines = true
   auto_start_machines = true
   min_machines_running = 0
+
   [http_service.concurrency]
-    type = "requests"
-    soft_limit = 200
+    type = 'requests'
     hard_limit = 250
-  processes = ['app']
+    soft_limit = 200
 
 [[vm]]
   memory = '1gb'
