@@ -2,9 +2,9 @@
   "name": "mern-server",
   "version": "1.0.0",
   "description": "",
-  "main": "api/index.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node api/index.js",
+    "start": "node index.js",
     "dev": "nodemon api/index.js",
     "seed": "node seeders/seeds.js",
     "dropC": "node connection/dropCollection.js",
@@ -30,7 +30,8 @@
   },
   "devDependencies": {
     "@faker-js/faker": "^8.4.1",
+    "@flydotio/dockerfile": "^0.5.7",
     "@types/jsonwebtoken": "^9.0.2",
-    "dotenv": "^16.3.1"
+    "dotenv": "^16.4.5"
   }
 }
