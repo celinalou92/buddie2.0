@@ -6,7 +6,6 @@ import { QUERY_TASKS } from "../../utils/queries";
 import AuthService from "../..//utils/auth";
 import Grid from "@material-ui/core/Grid";
 
-
 const Taskboard = () => {
   const { loading, data } = useQuery(QUERY_TASKS);
 
@@ -28,7 +27,20 @@ const Taskboard = () => {
 
   return (
     <>
-      <Grid container className="taskListHeader">
+      <table className="taskTable">
+        <thead className="cardHeader">
+          <tr>
+            <th scope="col">Assign</th>
+            <th scope="col">Task</th>
+            <th scope="col">Delete</th>
+          </tr>
+        </thead>
+        <tbody className="card scroller">
+        <TaskRow tasks={tasks} />
+        </tbody>
+      </table>
+      <TaskForm />
+      {/* <Grid container className="cardHeader flex-row justify-center">
         <Grid item md={4}>
           <p>Assign</p>
         </Grid>
@@ -39,15 +51,15 @@ const Taskboard = () => {
           <p>Delete</p>
         </Grid>
       </Grid>
-      <Grid container className="taskListContainer scroller">
+      <div className="card scroller">
         {loading ? (
           <div>Loading your Pod's tasks</div>
         ) : (
           <TaskRow tasks={tasks} />
         )}
         <br />
-      </Grid>
-      <TaskForm />
+      </div>
+      <TaskForm /> */}
     </>
   );
 };

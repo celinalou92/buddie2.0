@@ -27,23 +27,13 @@ body {
 body {
   margin: 0;
   padding: 0;
-  font-family: "Inconsolata", monospace;
+  font-family: 'Quicksand', sans-serif;
   font-weight: 400;
   line-height: 1.5;
   font-size: 20px;
   color: var(--dark);
-  /* background-color:#FAD02C;  */
-  /* background-color: cornsilk; */
-  /* background-color: aliceblue; */
   background: linear-gradient(180deg, white 50%, rgb(222, 236, 249) 85%);
-    /* change back to 180 deg */
-  /* background-color: ghostwhite; */
-  /* background-color: #333652 */
-  /* background-color: #F9F6F0; */
-
 }
-
-
 
 h1,
 h2,
@@ -51,8 +41,9 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Karla", sans-serif;
+  font-family: 'PT Sans Narrow', sans-serif;
   font-weight: 700;
+  color: #6c7575;
   margin: 5px 0;
   line-height: 1.25;
 }
@@ -168,6 +159,8 @@ font-family: 'Thasadith', sans-serif;
   animation: AnimationName 15s ease infinite;
 }
 
+
+
 @-webkit-keyframes AnimationName {
   0%{background-position:0% 50%}
   50%{background-position:100% 50%}
@@ -229,21 +222,25 @@ font-family: 'Thasadith', sans-serif;
   100%{background-position:0% 50%}
 }
 
-.compBorders {
-  border-radius: 22px;
-  background-image: linear-gradient( 
-    180deg
-     , #ffe48b 50%, #FAD02C 85%);
-  width: 540px;
-  max-width:540px; 
-  height: 60vh;
-  max-height:600px;
+.card {
+  border-radius: var(--border-radius);
+  padding: 5%;
+  height: 50vh;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
   box-shadow: rgba(0, 0, 0, 0.1) 3px 5px 7px, rgba(0, 0, 0, 0.1) 3px 9px 18px;
-  margin-top: 10px;
-  padding-left: 15px;
-  padding-top: 26px;
-  font-size: 15px;
-  font-family: 'Quicksand', sans-serif;
+}
+
+.cardHeader {
+  height: 10%;
+  width: 100%;
+  padding: 5%;
+  text-align: center;
+  border-top-left-radius: var(--border-radius);
+  border-top-right-radius:var(--border-radius);
+  background-image: linear-gradient(
+    180deg
+    , #ffe48b 50%, #FAD02C 85%);
 }
 
 .nameStyle{
@@ -313,48 +310,16 @@ font-family: 'Thasadith', sans-serif;
 }
 
 
-.taskListHeader {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: flex-end;
-  height: 10vh;
+ .taskTable {
+  table-layout: fixed;
   width: 100%;
-  padding: 20px;
-  text-align: center;
-  border-top-left-radius: 30px;
-  border-top-right-radius: 30px;
-  background-image: linear-gradient(
-    180deg
-    , #ffe48b 50%, #FAD02C 85%);
-}
+  border-collapse: collapse;
+ }
 
-.taskListContainer{
+.taskTable th,
+.taskTable td {
   text-align: center;
-  /* margin: auto; */
-  border-radius: 30px;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-  height: 50vh; 
-  box-shadow: rgba(0, 0, 0, 0.1) 3px 5px 7px, rgba(0, 0, 0, 0.1) 3px 9px 18px;  
-}
-
- 
-.taskRow {
-  text-align: center;
-  padding: 20px;
-  margin: auto;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-}
-
-.taskCell {
-  text-align: center;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
+  padding: 10px;
 }
 
 .mobile-display {
@@ -1462,16 +1427,5 @@ font-family: 'Thasadith', sans-serif;
   padding-left: 10px;
   font-size: 12px;
   color:green;
-}
-
-.heading {
-/* font-family: 'Passion One', cursive; */
-/* font-family: 'Poiret One', cursive; */
-font-family: 'PT Sans Narrow', sans-serif;
-/* font-family: 'Quicksand', sans-serif; */
-/* font-family: 'Thasadith', sans-serif; */
-/* font-family: 'Truculenta', sans-serif; */
-font-size: 35px;
-color: #6c7575;
 }
 

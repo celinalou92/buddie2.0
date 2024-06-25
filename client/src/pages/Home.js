@@ -34,7 +34,7 @@ const Home = () => {
         </Grid>
         <Grid item sm={6}>
           <h2 className="heading">Messages</h2>
-          <div className="compBorders scroller flex-column justify-space-between alig">
+          <div className="card scroller flex-column justify-space-between alig">
             <MessageList />
           </div>
           <MessageForm />

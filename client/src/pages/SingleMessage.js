@@ -24,29 +24,18 @@ const SingleMessage = (props) => {
   }
 
   return (
-    <Grid
-      direction="row"
-      container
-      spacing={12}
-      alignItems="flex-start"
-      justify="center"
-    >
-      {/* <h2>You are viewing {message.username}'s Message</h2> */}
-      <div className="compBorders scroller">
-        <Grid container item sm={12} alignItems="flex-start" justify="center">
-          <span style={{ fontWeight: 800 }} className="">
-            {message.username} : {message.messageText}
-          </span>
-        </Grid>
-        <Grid container item sm={12} alignItems="flex-start" justify="center">
-          <div className="messageDate">{message.createdAt}</div>
-        </Grid>
-        <Grid container item sm={12} alignItems="flex-start" justify="center">
-          {message.replies.length > 0 && <ReplyList replies={message.replies} />}
-        </Grid>
-        {Auth.loggedIn() && <ReplyForm messageId={message._id} />}
+    <>
+      <h2>You are viewing {message.username}'s Message</h2>
+      <div className="card scroller">
+        <div>
+            <h5>
+              {message.username} : {message.messageText}
+            </h5>
+        </div>
+        {message.replies.length > 0 && <ReplyList replies={message.replies} />}
       </div>
-    </Grid>
+        {Auth.loggedIn() && <ReplyForm messageId={message._id} />}
+    </>
   );
 };
 

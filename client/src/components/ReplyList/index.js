@@ -6,7 +6,8 @@ const ReplyList = ({ replies }) => {
   console.log("reply list",replies)
   return (
     <div>
-      <span className="">Replies</span>
+      <br/>
+      <h5>Replies:</h5>
       <div className="">
         {replies &&
           replies.map((reply) => (
