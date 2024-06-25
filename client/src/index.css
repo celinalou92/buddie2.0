@@ -157,6 +157,33 @@ font-family: 'Thasadith', sans-serif;
 }
 
 
+.buddieBtn {
+  background: linear-gradient(92deg, #f3cb2e, #ecb252, #f57972);
+  background-size: 400% 400%;
+  border-radius: var(--border-radius);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px, rgba(0, 0, 0, 0.1) 0px 8px 16px;
+  color: rgb(18, 113, 215);
+  -webkit-animation: AnimationName 15s ease infinite;
+  -moz-animation: AnimationName 15s ease infinite;
+  animation: AnimationName 15s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+@-moz-keyframes AnimationName {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+@keyframes AnimationName {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+
 /* ----------------------- Dashboard Styles ------------------------- */
 
 .credCardsSignup {
@@ -334,35 +361,6 @@ font-family: 'Thasadith', sans-serif;
   display: none;
 }
 
-.taskFormBtn {
-  background: linear-gradient(92deg, #f3cb2e, #ecb252, #f57972);
-  background-size: 400% 400%;
-  border-radius: 10px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px, rgba(0, 0, 0, 0.1) 0px 8px 16px;
-  color: rgb(18, 113, 215);
-  
-
-  -webkit-animation: AnimationName 15s ease infinite;
-  -moz-animation: AnimationName 15s ease infinite;
-  animation: AnimationName 15s ease infinite;
-}
-
-@-webkit-keyframes AnimationName {
-  0%{background-position:0% 50%}
-  50%{background-position:100% 50%}
-  100%{background-position:0% 50%}
-}
-@-moz-keyframes AnimationName {
-  0%{background-position:0% 50%}
-  50%{background-position:100% 50%}
-  100%{background-position:0% 50%}
-}
-@keyframes AnimationName {
-  0%{background-position:0% 50%}
-  50%{background-position:100% 50%}
-  100%{background-position:0% 50%}
-}
-
 
 @media screen and (max-width: 1080px){
   .task-container  {
@@ -424,7 +422,6 @@ font-family: 'Thasadith', sans-serif;
 }
 
 .form-label {
-  font-size: 1.2rem;
   margin: 0.625rem 0 0.25rem;
 }
 
@@ -432,7 +429,6 @@ font-family: 'Thasadith', sans-serif;
   width: 100%;
   padding: 0.75rem;
   margin: 0.2rem 0;
-  font-size: 1.2rem;
   border: 2px solid var(--dark);
   border-radius: var(--border-radius);
 }
@@ -482,6 +478,10 @@ font-family: 'Thasadith', sans-serif;
 
 .w-25 {
   width: 25%;
+}
+
+.h-100 {
+  height: 100%;
 }
 
 .min-100-vh {

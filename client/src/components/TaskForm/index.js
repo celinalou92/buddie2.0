@@ -48,12 +48,6 @@ const TaskForm = () => {
 
   return (
     <div>
-      <p
-        className={`m-1 ${characterCount === 280 || error ? "text-error" : ""}`}
-      >
-        Character Count: {characterCount}/280
-        {error && <span className="ml-2">Something went wrong...</span>}
-      </p>
       <form
         className="flex-row justify-center justify-space-between-md align-stretch"
         onSubmit={handleFormSubmit}
@@ -64,9 +58,15 @@ const TaskForm = () => {
           className="form-input col-12 col-md-9"
           onChange={handleChange}
         ></textarea>
-        <button className="btn col-12 col-md-3 taskFormBtn" type="submit">
+        <button className="btn col-12 col-md-3 buddieBtn" type="submit">
           Submit
         </button>
+        <p
+        className={`m-1 ${characterCount === 280 || error ? "text-error" : ""}`}
+      >
+        Character Count: {characterCount}/280
+        {error && <span className="ml-2">Something went wrong...</span>}
+      </p>
       </form>
     </div>
   );

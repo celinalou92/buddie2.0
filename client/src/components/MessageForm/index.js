@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useMutation } from "@apollo/client";
 import { ADD_MESSAGE } from "../../utils/mutations";
 import { QUERY_MESSAGES } from "../../utils/queries";
-import SendIcon from '@material-ui/icons/Send';
+import SendIcon from "@material-ui/icons/Send";
 
 const MessageForm = () => {
   const [messageText, setText] = useState("");
@@ -46,13 +46,7 @@ const MessageForm = () => {
   };
 
   return (
-    <div >
-      <p
-        className={`m-1 ${characterCount === 280 || error ? "text-error" : ""}`}
-      >
-        Character Count: {characterCount}/280
-        {error && <span className="ml-2">Something went wrong...</span>}
-      </p>
+    <div>
       <form
         className="flex-row justify-center justify-space-between-md align-stretch"
         onSubmit={handleFormSubmit}
@@ -60,15 +54,23 @@ const MessageForm = () => {
         <textarea
           placeholder="Type a message"
           value={messageText}
-          className="form-input  col-md-9"
+          className="form-input   col-12 col-md-9"
           onChange={handleChange}
         ></textarea>
-  
-        <button className="taskFormBtn btn col-md-2 " type="submit">
-          <span><SendIcon></SendIcon></span>
-        </button>
-        
 
+        <button className="buddieBtn btn col-12 col-md-3" type="submit">
+          <span>
+            <SendIcon></SendIcon>
+          </span>
+        </button>
+        <p
+          className={`m-1 ${
+            characterCount === 280 || error ? "text-error" : ""
+          }`}
+        >
+          Character Count: {characterCount}/280
+          {error && <span className="ml-2">Something went wrong...</span>}
+        </p>
       </form>
     </div>
   );

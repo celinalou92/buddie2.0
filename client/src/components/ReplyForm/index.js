@@ -31,12 +31,8 @@ const ReplyForm = ({ messageId }) => {
 
   return (
     <div>
-      <p className={`m-o ${characterCount === 280 || ""}`}>
-        Character Count: {characterCount}/280
-        {error && <span className="ml-2">Something went wrong...</span>}
-      </p>
       <form
-        className="flex-row justify-center justify-space-between-md align-stretch"
+        className="flex-row justify-center justify-space-between-md align-center"
         onSubmit={handleFormSubmit}
       >
         <textarea
@@ -45,10 +41,14 @@ const ReplyForm = ({ messageId }) => {
           className="form-input col-12 col-md-9"
           onChange={handleChange}
         ></textarea>
-        {error && <span className="ml-2">Something went wrong...</span>}
-        <button className="btn col-12 col-md-3" type="submit">
+        <button className="btn col-12 col-md-3 buddieBtn"  type="submit">
           Submit
         </button>
+        <p
+        className={`m-1 ${characterCount === 280 || error ? "text-error" : ""}`}>
+        Character Count: {characterCount}/280
+        {error && <span className="ml-2">Something went wrong...</span>}
+      </p>
       </form>
     </div>
   );
