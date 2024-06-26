@@ -23,13 +23,7 @@ const MessageList = () => {
               <span className="chatStyle">{message.messageText}</span>
             </div>
             <div>
-              <Link
-                to={`/profile/${message.username}`}
-                style={{ fontWeight: 700 }}
-                className="text-light"
-              >
-                <PersonIcon />
-              </Link>{" "}
+              <PersonIcon />
               <Link to={`/message/${message._id}`}>
                 <ChatIcon />
               </Link>

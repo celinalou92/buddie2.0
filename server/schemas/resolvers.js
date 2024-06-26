@@ -25,19 +25,19 @@ const resolvers = {
         throw new Error("Not logged in", console.log(e));
       }
     },
-    // -------- get all tasks ------ //
+
     tasks: async () => {
       return Task.find();
     },
-    // -------- get all tasks by assignedID------ //
+
     usersTasks: async (parent, { assignedID }) => {
       return Task.find({ assignedID });
     },
-    // -------------- find a single task -------------- //
+
     task: async (parent, { _id }) => {
       return Task.findOne({ _id });
     },
-    // -------------- get all users -------------- //
+ 
     users: async (context) => {
       return User.find()
         .select("-__v -password")
