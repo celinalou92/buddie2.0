@@ -29,7 +29,7 @@ const Home = () => {
   return (
     <main>
       <div className="flex-row justify-space-around">
-        <div className="col-sm-12 col-md-6 p-2">
+        <div className="col-sm-12 col-md-8 p-2">
           <div className="card" >
             <div>
               <TaskBoard />
@@ -39,7 +39,7 @@ const Home = () => {
             <TaskForm />
           </div>
         </div>
-        <div className="col-sm-12 col-md-6 p-2">
+        <div className="col-sm-12 col-md-4 p-2">
           <div className="card">
             <div className="cardHeader">
               <h4>Messages</h4>
