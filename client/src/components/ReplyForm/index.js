@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useMutation } from "@apollo/client";
-import { ADD_REACTION, ADD_REPLY } from "../../utils/mutations";
+import {  ADD_REPLY } from "../../utils/mutations";
 
 const ReplyForm = ({ messageId }) => {
   const [replyBody, setBody] = useState("");
@@ -19,14 +19,14 @@ const ReplyForm = ({ messageId }) => {
     event.preventDefault();
     try {
       await addReply({
-        variables: { replyBody, messageId },
-      });
-      // clear form input value
-      setBody("");
-      setCharacterCount(0);
-    } catch (e) {
-      console.log(e);
-    }
+          variables: { replyBody, messageId },
+        });
+        // clear form input value
+        setBody("");
+        setCharacterCount(0);
+      } catch (e) {
+        console.log(e);
+      }
   };
 
   return (
@@ -41,14 +41,17 @@ const ReplyForm = ({ messageId }) => {
           className="form-input col-12 col-md-9"
           onChange={handleChange}
         ></textarea>
-        <button className="btn col-12 col-md-3 buddieBtn"  type="submit">
+        <button className="btn col-12 col-md-3 buddieBtn" type="submit">
           Submit
         </button>
         <p
-        className={`m-1 ${characterCount === 280 || error ? "text-error" : ""}`}>
-        Character Count: {characterCount}/280
-        {error && <span className="ml-2">Something went wrong...</span>}
-      </p>
+          className={`m-1 ${
+            characterCount === 280 || error ? "text-error" : ""
+          }`}
+        >
+          Character Count: {characterCount}/280
+          {error && <span className="ml-2">Something went wrong...</span>}
+        </p>
       </form>
     </div>
   );

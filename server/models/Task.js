@@ -6,7 +6,10 @@ export const taskSchema = new Schema(
     {
         taskText: {
             type: String,
-            maxlength: 280
+            maxlength: 280,
+            required: "Enter your task!",
+            minlength: 1,
+            maxlength: 280,
         },
         username: {
             type: String

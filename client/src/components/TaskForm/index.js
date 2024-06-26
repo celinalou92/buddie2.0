@@ -16,8 +16,8 @@ const TaskForm = () => {
           query: QUERY_TASKS,
           data: { tasks: [...tasks, addTask]},
         });
-      } catch (e) {
-        console.log(e);
+      } catch (error) {
+        console.log(error);
       }
     },
   });
@@ -62,7 +62,7 @@ const TaskForm = () => {
         <p
         className={`m-1 ${characterCount === 280 || error ? "text-error" : ""}`}
       >
-        Character Count: {characterCount}/280
+        {/* Character Count: {characterCount}/280 */}
         {error && <span className="ml-2">Something went wrong...</span>}
       </p>
       </form>
