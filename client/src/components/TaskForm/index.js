@@ -11,12 +11,10 @@ const TaskForm = () => {
   const [addTask, { error }] = useMutation(ADD_TASK, {
     update(cache, { data: { addTask } }) {
       try {
-        // read what's currently in the cache
         const { tasks } = cache.readQuery({ query: QUERY_TASKS });
-        // prepend the newest task to the front of the array
         cache.writeQuery({
           query: QUERY_TASKS,
-          data: { tasks: [addTask, ...tasks]},
+          data: { tasks: [...tasks, addTask]},
         });
       } catch (e) {
         console.log(e);

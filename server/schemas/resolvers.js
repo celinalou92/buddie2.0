@@ -12,9 +12,6 @@ const resolvers = {
       }
       throw new Error("Please Enter the Application Password");
     },
-    // authentication
-    // must define context in server.js for this to work
-    // use utils middleware to add logic
     me: async (parent, args, context) => {
       const userData = context.data;
       try {
@@ -22,7 +19,6 @@ const resolvers = {
           const meData = await User.findOne({ _id: userData._id })
             .select("-__v -password")
             .populate("tasks");
-          // .populate("friends");
           return meData;
         }
       } catch (e) {

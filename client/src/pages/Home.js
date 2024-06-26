@@ -1,22 +1,11 @@
 import Auth from "../utils/auth";
 import MessageList from "../components/MessageList";
 import MessageForm from "../components/MessageForm";
-import Grid from "@material-ui/core/Grid";
-import { QUERY_ME } from "../utils/queries";
-import { useQuery } from "@apollo/client";
 import TaskBoard from "../components/TaskBoard";
 import TaskForm from "../components/TaskForm";
 
-const Home = () => {
+const Home = () => {  
   const user = Auth.loggedIn();
-  const { data } = useQuery(QUERY_ME, {
-    variables: {
-      id: user.data._id,
-    },
-  });
-
-  const tasks = data?.me.tasks || [];
-
   if (!user || undefined) {
     return (
       <h4>

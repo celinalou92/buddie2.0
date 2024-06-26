@@ -64,11 +64,6 @@ export const QUERY_USERS = gql`
     users {
       _id
       username
-      email
-      tasks {
-        taskText
-        taskStatus
-      }
     }
   }
 `;
@@ -104,21 +99,6 @@ export const QUERY_ME_BASIC = gql`
         _id
         username
       }
-    }
-  }
-`;
-
-// Delete Later
-export const QUERY_THOUGHT = gql`
-  query {
-    tasks {
-      _id
-      username
-      taskText
-      taskStatus
-      createdAt
-      assignedID
-      taskStatus
     }
   }
 `;
