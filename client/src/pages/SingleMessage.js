@@ -25,16 +25,20 @@ const SingleMessage = (props) => {
 
   return (
     <>
-      <h2>You are viewing {message.username}'s Message</h2>
-      <div className="card scroller">
-        <div>
-            <h5>
-              {message.username} : {message.messageText}
-            </h5>
+      <div className="card">
+        <div className="cardHeader">
+          <h2>You are viewing {message.username}'s Message</h2>
         </div>
-        {message.replies.length > 0 && <ReplyList replies={message.replies} />}
+        <div className="scroller p-4">
+          <div>
+            <p>{message.messageText}</p>
+          </div>
+          {message.replies.length > 0 && (
+            <ReplyList replies={message.replies} />
+          )}
+        </div>
       </div>
-        {Auth.loggedIn() && <ReplyForm messageId={message._id} />}
+      {Auth.loggedIn() && <ReplyForm messageId={message._id} />}
     </>
   );
 };

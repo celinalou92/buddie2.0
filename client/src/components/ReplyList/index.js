@@ -8,12 +8,12 @@ const ReplyList = ({ replies }) => {
     <div>
       <br/>
       <h5>Replies:</h5>
-      <div className="">
+      <div>
         {replies &&
           replies.map((reply) => (
             <p className="" key={reply._id}>
               <Link
-                to={`/profile/${reply.username}`}
+                // to={`/profile/${reply.username}`}
                 style={{ fontWeight: 700 }}
               >
                 {reply.username}
