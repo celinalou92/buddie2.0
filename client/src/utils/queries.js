@@ -103,20 +103,6 @@ export const QUERY_ME_BASIC = gql`
   }
 `;
 
-export const QUERY_THOUGHTS = gql`
-  query {
-    tasks {
-      _id
-      username
-      taskText
-      taskStatus
-      createdAt
-      assignedID
-      taskStatus
-    }
-  }
-`;
-
 export const QUERY_MESSAGES = gql`
   query {
     messages {
@@ -135,6 +121,7 @@ export const QUERY_MESSAGE = gql`
       replies {
         replyBody
         username
+        createdAt
         _id
       }
       username

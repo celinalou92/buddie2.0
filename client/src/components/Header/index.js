@@ -11,36 +11,36 @@ const Header = () => {
     Auth.logout();
   };
 
-  return ( location.pathname.toString() !== "/password" &&
-    <header className=" mb-4 py-2 flex-row align-center">
-      <div className="container flex-row justify-space-between-lg justify-center align-center">
-        <Link to="/dashboard">
-          <img
-            src={buddie_logo}
-            alt="buddie logo"
-            className="buddieLogo"
-            key="logoBuddie"
-          />
-        </Link>
-
-        <nav className="text-center navFont">
-          {Auth.loggedIn() ? (
-            <>
-              <Link to="/dashboard">DASHBOARD</Link>
-              {/* <Link to="/profile">MY PROFILE</Link> */}
-              <a href="/" onClick={logout}>
-                LOGOUT
-              </a>
-            </>
-          ) : (
-            <>
-              <Link to="/login">LOGIN</Link>
-              <Link to="/signup">SIGN UP</Link>
-            </>
-          )}
-        </nav>
-      </div>
-    </header>
+  return (
+    location.pathname.toString() !== "/password" && (
+      <header className=" mb-4 p-3 flex-row align-center">
+        <div className="container px-5 flex-row justify-space-between-lg justify-center align-center">
+          <Link to="/dashboard">
+            <img
+              src={buddie_logo}
+              alt="buddie logo"
+              className="buddieLogo"
+              key="logoBuddie"
+            />
+          </Link>
+          <nav className="text-center navFont">
+            {Auth.loggedIn() ? (
+              <>
+                <Link to="/dashboard">DASHBOARD</Link>
+                <a href="/" onClick={logout}>
+                  LOGOUT
+                </a>
+              </>
+            ) : (
+              <>
+                <Link to="/login">LOGIN</Link>
+                <Link to="/signup">SIGN UP</Link>
+              </>
+            )}
+          </nav>
+        </div>
+      </header>
+    )
   );
 };
 

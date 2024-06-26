@@ -5,8 +5,6 @@ import { QUERY_MESSAGE } from "../utils/queries";
 import ReplyForm from "../components/ReplyForm";
 import ReplyList from "../components/ReplyList";
 import Auth from "../utils/auth";
-import Grid from "@material-ui/core/Grid";
-import MessageList from "../components/MessageList";
 
 const SingleMessage = (props) => {
   const { id } = useParams();
@@ -27,15 +25,15 @@ const SingleMessage = (props) => {
     <>
       <div className="card">
         <div className="cardHeader">
-          <h2>You are viewing {message.username}'s Message</h2>
+          <h2>Message Thread:</h2> 
         </div>
-        <div className="scroller p-4">
-          <div>
-            <p>{message.messageText}</p>
+        <div className="p-5">
+          <p>{message.messageText}</p>
+          <div className="scroller">
+            {message.replies.length > 0 && (
+              <ReplyList replies={message.replies} />
+            )}
           </div>
-          {message.replies.length > 0 && (
-            <ReplyList replies={message.replies} />
-          )}
         </div>
       </div>
       {Auth.loggedIn() && <ReplyForm messageId={message._id} />}

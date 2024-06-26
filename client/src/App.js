@@ -40,7 +40,7 @@ const client = new ApolloClient({
       Query: {
         fields: {
           tasks: {
-            merge(existing = [], incoming, { args }) {
+            merge(existing = [], incoming) {
               return incoming;
             }
           }
