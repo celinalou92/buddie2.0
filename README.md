@@ -2,7 +2,7 @@
 
 ## Description
 
-This application is a social media platform that allows users to manage their househouse relations, share their messages, and information with other members on the platform.
+This application is a social media platform that allows users to manage shared household chores/tasks and interact via a messageboard.
 
 ![Buddie](./client/public/buddie_screengrab.png)
 
@@ -37,7 +37,7 @@ https://www.mongodb.com/docs/mongodb-shell/reference/configure-shell-settings/#s
 https://reflectoring.io/tutorial-graphql-apollo-server-nodejs-mongodb/
 
 ## Deployed App
-https://buddie-inky.vercel.app/
+https://buddie2-0.vercel.app/
 
 
 ## Questions
