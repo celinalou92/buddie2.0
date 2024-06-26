@@ -5,6 +5,7 @@ import Grid from "@material-ui/core/Grid";
 import { QUERY_ME } from "../utils/queries";
 import { useQuery } from "@apollo/client";
 import TaskBoard from "../components/TaskBoard";
+import TaskForm from "../components/TaskForm";
 
 const Home = () => {
   const user = Auth.loggedIn();
@@ -27,19 +28,29 @@ const Home = () => {
 
   return (
     <main>
-      <Grid direction="row" container spacing={2}>
-        <Grid item sm={6} className="scroller py-4">
-          <h2 className="heading">Viewing Your Pod's Tasks</h2>
-          <TaskBoard />
-        </Grid>
-        <Grid item sm={6}>
-          <h2 className="heading">Messages</h2>
-          <div className="card scroller flex-column justify-space-between alig">
-            <MessageList />
+      <div className="flex-row justify-space-around">
+        <div className="col-sm-12 col-md-6 p-2">
+          <div className="card" >
+            <div>
+              <TaskBoard />
+            </div>
+          </div>
+          <div>
+            <TaskForm />
+          </div>
+        </div>
+        <div className="col-sm-12 col-md-6 p-2">
+          <div className="card">
+            <div className="cardHeader">
+              <h4>Messages</h4>
+            </div>
+            <div className="card scroller">
+              <MessageList />
+            </div>
           </div>
           <MessageForm />
-        </Grid>
-      </Grid>
+        </div>
+      </div>
     </main>
   );
 };

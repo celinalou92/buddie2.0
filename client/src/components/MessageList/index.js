@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Grid from "@material-ui/core/Grid";
 import ChatIcon from "@material-ui/icons/Chat";
 import PersonIcon from "@material-ui/icons/Person";
 import { QUERY_MESSAGES } from "../../utils/queries";
@@ -15,33 +14,31 @@ const MessageList = () => {
   }
 
   return (
-    <div>
+    <>
       {messages &&
         messages.map((message) => (
-          <div key={message._id} className="">
-            <Grid >
-              <Grid >
-                <span className="nameStyle">{message.username}:</span> <span className="chatStyle">{message.messageText}</span>
-              </Grid>
-              <Grid container item sm={6}>
-                <Link
-                  to={`/profile/${message.username}`}
-                  style={{ fontWeight: 700 }}
-                  className="text-light"
-                >
-                  <PersonIcon />
-                </Link>{" "}
-                <Link to={`/message/${message._id}`}>
-                  <ChatIcon />
-                </Link>
-                <div className="messageDate">{message.createdAt}</div>
-              </Grid>
-            </Grid>
+          <div key={message._id} className="py-1 px-3">
+            <div>
+              <span className="nameStyle">{message.username}:</span>{" "}
+              <span className="chatStyle">{message.messageText}</span>
+            </div>
+            <div>
+              <Link
+                to={`/profile/${message.username}`}
+                style={{ fontWeight: 700 }}
+                className="text-light"
+              >
+                <PersonIcon />
+              </Link>{" "}
+              <Link to={`/message/${message._id}`}>
+                <ChatIcon />
+              </Link>
+              <div className="messageDate">{message.createdAt}</div>
+            </div>
           </div>
         ))}
-    </div>
+    </>
   );
 };
 
 export default MessageList;
-

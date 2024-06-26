@@ -1,10 +1,8 @@
 import React from "react";
 import TaskRow from "../TaskRow";
-import TaskForm from "../TaskForm";
 import { useQuery } from "@apollo/client";
 import { QUERY_TASKS } from "../../utils/queries";
 import AuthService from "../..//utils/auth";
-import Grid from "@material-ui/core/Grid";
 
 const Taskboard = () => {
   const { loading, data } = useQuery(QUERY_TASKS);
@@ -35,31 +33,10 @@ const Taskboard = () => {
             <th scope="col">Delete</th>
           </tr>
         </thead>
-        <tbody className="card scroller">
+        <tbody>
         <TaskRow tasks={tasks} />
         </tbody>
       </table>
-      <TaskForm />
-      {/* <Grid container className="cardHeader flex-row justify-center">
-        <Grid item md={4}>
-          <p>Assign</p>
-        </Grid>
-        <Grid item md={6}>
-          <p>Task</p>
-        </Grid>
-        <Grid item md={2}>
-          <p>Delete</p>
-        </Grid>
-      </Grid>
-      <div className="card scroller">
-        {loading ? (
-          <div>Loading your Pod's tasks</div>
-        ) : (
-          <TaskRow tasks={tasks} />
-        )}
-        <br />
-      </div>
-      <TaskForm /> */}
     </>
   );
 };

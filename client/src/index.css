@@ -27,7 +27,7 @@ body {
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
   font-weight: 400;
   line-height: 1.5;
   font-size: 20px;
@@ -41,7 +41,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'PT Sans Narrow', sans-serif;
+  font-family: "PT Sans Narrow", sans-serif;
   font-weight: 700;
   color: #6c7575;
   margin: 5px 0;
@@ -51,7 +51,6 @@ h6 {
 h1 {
   font-size: 2.25rem;
 }
-
 
 h3 {
   font-size: 1.75rem;
@@ -87,12 +86,11 @@ header {
   box-shadow: 0px 5px 4px rgb(0 0 0 / 10%);
 }
 
-footer{
+footer {
   background-color: rgb(222, 236, 249);
   text-align: center;
   font-size: 13px;
 }
-
 
 nav {
   width: 100%;
@@ -107,13 +105,11 @@ nav a {
 nav a:hover {
   color: #333652;
   border-radius: 22px;
-  background-image: linear-gradient(
-    180deg
-    , #ffe48b 50%, #FAD02C 85%);
+  background-image: linear-gradient(180deg, #ffe48b 50%, #fad02c 85%);
 }
 
 .navFont {
-font-family: 'Thasadith', sans-serif;
+  font-family: "Thasadith", sans-serif;
 }
 
 .page-title {
@@ -147,7 +143,6 @@ font-family: 'Thasadith', sans-serif;
   display: inline;
 }
 
-
 .buddieBtn {
   background: linear-gradient(92deg, #f3cb2e, #ecb252, #f57972);
   background-size: 400% 400%;
@@ -159,22 +154,38 @@ font-family: 'Thasadith', sans-serif;
   animation: AnimationName 15s ease infinite;
 }
 
-
-
 @-webkit-keyframes AnimationName {
-  0%{background-position:0% 50%}
-  50%{background-position:100% 50%}
-  100%{background-position:0% 50%}
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 @-moz-keyframes AnimationName {
-  0%{background-position:0% 50%}
-  50%{background-position:100% 50%}
-  100%{background-position:0% 50%}
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 @keyframes AnimationName {
-  0%{background-position:0% 50%}
-  50%{background-position:100% 50%}
-  100%{background-position:0% 50%}
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 /* ----------------------- Dashboard Styles ------------------------- */
@@ -185,7 +196,6 @@ font-family: 'Thasadith', sans-serif;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px, rgba(0, 0, 0, 0.1) 0px 8px 16px;
   color: rgb(18, 113, 215);
-  
 
   -webkit-animation: AnimationName 15s ease infinite;
   -moz-animation: AnimationName 15s ease infinite;
@@ -199,7 +209,6 @@ font-family: 'Thasadith', sans-serif;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px, rgba(0, 0, 0, 0.1) 0px 8px 16px;
   height: 325px;
   color: rgb(18, 113, 215);
-  
 
   -webkit-animation: AnimationName 13s ease infinite;
   -moz-animation: AnimationName 13s ease infinite;
@@ -207,63 +216,78 @@ font-family: 'Thasadith', sans-serif;
 }
 
 @-webkit-keyframes AnimationName {
-  0%{background-position:0% 50%}
-  50%{background-position:100% 50%}
-  100%{background-position:0% 50%}
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 @-moz-keyframes AnimationName {
-  0%{background-position:0% 50%}
-  50%{background-position:100% 50%}
-  100%{background-position:0% 50%}
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 @keyframes AnimationName {
-  0%{background-position:0% 50%}
-  50%{background-position:100% 50%}
-  100%{background-position:0% 50%}
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .card {
   border-radius: var(--border-radius);
-  padding: 5%;
-  height: 50vh;
   border-top-left-radius: 0;
+  height: 60vh;
   border-top-right-radius: 0;
+  overflow: hidden;
   box-shadow: rgba(0, 0, 0, 0.1) 3px 5px 7px, rgba(0, 0, 0, 0.1) 3px 9px 18px;
 }
 
 .cardHeader {
-  height: 10%;
   width: 100%;
+  height: 10vh;
   padding: 5%;
-  text-align: center;
   border-top-left-radius: var(--border-radius);
-  border-top-right-radius:var(--border-radius);
-  background-image: linear-gradient(
-    180deg
-    , #ffe48b 50%, #FAD02C 85%);
+  border-top-right-radius: var(--border-radius);
+  background-image: linear-gradient(180deg, #ffe48b 50%, #fad02c 85%);
 }
 
-.nameStyle{
-  font-family: 'PT Sans Narrow', sans-serif;
+.nameStyle {
+  font-family: "PT Sans Narrow", sans-serif;
   color: green;
   font-size: 16px;
 }
 
-.chatStyle{
+.chatStyle {
   color: darkblue;
   font-size: 15px;
-  font-family: 'Thasadith', sans-serif;
+  font-family: "Thasadith", sans-serif;
   padding-top: 10px;
 }
 
 .scroller {
-  -ms-overflow-style: none; 
-  scrollbar-width: none; 
-  overflow-y: scroll; 
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  overflow-y: scroll;
 }
 
 .scroller::-webkit-scrollbar {
-  display: none; 
+  display: none;
 }
 
 /* ------------------------------------------- Taskboard Styles --------------------------------------- */
@@ -275,10 +299,13 @@ font-family: 'Thasadith', sans-serif;
   padding: 0;
   font-size: 0.875rem;
   min-width: 0;
-  box-shadow: 0px 3px 5px -1px rgb(0 0 0 / 20%), 0px 6px 10px 0px rgb(0 0 0 / 14%), 0px 1px 18px 0px rgb(0 0 0 / 12%);
+  box-shadow: 0px 3px 5px -1px rgb(0 0 0 / 20%),
+    0px 6px 10px 0px rgb(0 0 0 / 14%), 0px 1px 18px 0px rgb(0 0 0 / 12%);
   box-sizing: border-box;
   min-height: 36px;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   font-weight: 500;
   line-height: 1.75;
@@ -297,85 +324,83 @@ font-family: 'Thasadith', sans-serif;
 }
 
 .deleteBtn:hover {
-  background-color:  #c51162;
+  background-color: #c51162;
 }
 
 .assign-input {
   border-radius: 4px;
-  font-family: 'Thasadith', sans-serif;
+  font-family: "Thasadith", sans-serif;
   border: 1px solid #ced4da;
   font-size: 1rem;
   font-weight: 700;
-  padding: 5px 26px 5px 12px;  
+  padding: 5px 26px 5px 12px;
 }
 
 
- .taskTable {
+table {
   table-layout: fixed;
   width: 100%;
   border-collapse: collapse;
- }
+}
 
-.taskTable th,
-.taskTable td {
+thead {
+  display:table;
+	width:100%;
+}
+
+tbody {
+  height: 50vh;
+  width: 100%;
+  overflow: auto;
+  display: block;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  padding: 3%;
+}
+
+tbody tr {
+  display:table;
+  width:100%;
+  table-layout:fixed;
+}
+
+th,
+td {
+  /* overflow-wrap: normal; */
   text-align: center;
-  padding: 10px;
+  max-width: 100%;
+  text-wrap: wrap;
 }
 
 .mobile-display {
   display: none;
 }
 
+@media screen and (max-width: 1080px) {
 
-@media screen and (max-width: 1080px){
-  .task-container  {
-    height: 200px;
-    border-bottom: 1px solid rgba(18, 113, 215, .2);
-    border-radius: 30px;
-    padding-bottom: 10px;
-  }
-
-  .headerItem p {
-    font-size: 1.2rem;
-  }
-
-  .taskText{
-    font-size: 1rem;
-    padding:  10px 0;
-  }
-
-  .deleteBtn, .statusBtn {
+  .deleteBtn,
+  .statusBtn {
     width: 36px;
     height: 36px;
   }
 }
 
-
 @media screen and (max-width: 800px) {
-  .hide-mobile, .headerItem {
+  .hide-mobile,
+  .headerItem {
     display: none;
   }
 
-  .taskText{
-    font-size: 1rem;
-  }
 
   #taskListHeader {
     height: 40px;
     width: 100%;
-    
   }
 
-  .task-container  {
-    height: 200px;
-  }
-
-  .sele
-  .mobile-display {
+  .sele .mobile-display {
     display: inline-flex;
   }
 }
-
 
 /* ---------------------------------------End TaskBoard Style ---------------------------------------- */
 
@@ -397,7 +422,6 @@ font-family: 'Thasadith', sans-serif;
   border: 2px solid var(--dark);
   border-radius: var(--border-radius);
 }
-
 
 /* LAYOUT */
 .container {
@@ -950,7 +974,6 @@ font-family: 'Thasadith', sans-serif;
   color: var(--error);
 }
 
-
 /* FLEX CONTENT */
 .flex-row {
   display: flex;
@@ -1107,11 +1130,6 @@ font-family: 'Thasadith', sans-serif;
   .justify-space-between-sm {
     justify-content: space-between;
   }
-
-  /* .justify-space-between-submit {
-    justify-content: space-between;
-    margin-right: 50px;
-  } */
 
   .justify-space-around-sm {
     justify-content: space-around;
@@ -1412,7 +1430,6 @@ font-family: 'Thasadith', sans-serif;
 
 .buddieLogo {
   height: 30px;
-  
 }
 
 .buddieMainColor {
@@ -1426,6 +1443,5 @@ font-family: 'Thasadith', sans-serif;
 .messageDate {
   padding-left: 10px;
   font-size: 12px;
-  color:green;
+  color: green;
 }
-
