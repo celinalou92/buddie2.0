@@ -64,10 +64,12 @@ export const ADD_REPLY = gql`
 export const ADD_TASK = gql `
   mutation addTask($taskText: String!) {
     addTask(taskText: $taskText) {
-      _id
-      taskText
-      createdAt
-      username
+    _id
+    assignedID
+    createdAt
+    taskStatus
+    taskText
+    username
     }
   }
 `;
@@ -75,10 +77,12 @@ export const ADD_TASK = gql `
 export const DELETE_TASK = gql `
   mutation deleteTask($_id: ID!) {
     deleteTask(_id: $_id) {
-      _id
-      taskText
-      createdAt
-      username
+    _id
+    assignedID
+    createdAt
+    taskStatus
+    taskText
+    username
     }
   }
 `;
@@ -86,12 +90,12 @@ export const DELETE_TASK = gql `
 export const UPDATE_TASK = gql `
   mutation updateTask($_id: ID!, $taskStatus: Boolean, $assignedID: ID) {
     updateTask(_id: $_id, taskStatus: $taskStatus, assignedID: $assignedID) {
-      _id
-      taskText
-      createdAt
-      username
-      assignedID
-      taskStatus
+    _id
+    assignedID
+    createdAt
+    taskStatus
+    taskText
+    username
     }
   }
 `;

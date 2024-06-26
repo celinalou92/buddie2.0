@@ -14,6 +14,14 @@ const Taskboard = () => {
     return <div>Loading...</div>;
   }
 
+  if (!tasks.length) {
+    return (
+      <div className="p-4 text-center">
+        <h3>No Tasks Yet</h3>
+      </div>
+    );
+  }
+
   if (!user || undefined) {
     return (
       <h4>
@@ -34,7 +42,7 @@ const Taskboard = () => {
           </tr>
         </thead>
         <tbody>
-        <TaskRow tasks={tasks} />
+          <TaskRow tasks={tasks} />
         </tbody>
       </table>
     </>

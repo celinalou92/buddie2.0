@@ -2,11 +2,7 @@ import React from "react";
 import AssignMenu from "../AssignMenu";
 import DeleteButton from "../DeleteButton";
 
-const TaskList = ({ tasks }) => {
-  if (!tasks.length) {
-    return <h3>No Tasks Yet</h3>;
-  }
-
+const TaskRow = ({ tasks }) => {
   return (
     <>
       {tasks &&
@@ -27,4 +23,4 @@ const TaskList = ({ tasks }) => {
   );
 };
 
-export default TaskList;
+export default TaskRow;

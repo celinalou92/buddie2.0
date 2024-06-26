@@ -16,7 +16,7 @@ const TaskForm = () => {
         // prepend the newest task to the front of the array
         cache.writeQuery({
           query: QUERY_TASKS,
-          data: { tasks: [addTask, ...tasks] },
+          data: { tasks: [addTask, ...tasks]},
         });
       } catch (e) {
         console.log(e);
