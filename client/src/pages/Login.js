@@ -10,9 +10,9 @@ import { Link, Grid, Button } from "@material-ui/core";
 
 const Login = () => {
   const [formState, setFormState] = useState({ email: "", password: "" });
-
-  const [login, { loading, error }] = useMutation(LOGIN_USER);
-  // update state based on form input changes
+  const [formError, setFormError] = useState('');
+  const [login, { loading }] = useMutation(LOGIN_USER);
+  
   const handleChange = (event) => {
     const { name, value } = event.target;
 
@@ -22,7 +22,6 @@ const Login = () => {
     });
   };
 
-  // submit form
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
@@ -30,10 +29,15 @@ const Login = () => {
       const { data } = await login({
         variables: { ...formState },
       });
-
-      Auth.handleLogin(data.login.token);
-    } catch (error) {
-      return error;
+  
+      if (data && data.login && data.login.token) {
+        Auth.handleLogin(data.login.token);
+      } else {
+        setFormError('Login failed: no token returned.');
+      }
+    } catch (err) {
+      console.error("Login error:", err);
+      setFormError('Invalid email or password.');
     }
   };
 
@@ -45,7 +49,7 @@ const Login = () => {
       alignItems: "center",
     },
     form: {
-      width: "100%", // Fix IE 11 issue.
+      width: "100%", 
       marginTop: theme.spacing(3),
     },
     submit: {
@@ -86,18 +90,9 @@ const Login = () => {
             value={formState.password}
             onChange={handleChange}
           />
-          {error && (
-            <div>
-              {`
-             ${error.message}
-            `}
-            </div>
-          )}
-          {loading && (
-            <div>
-              {` 
-              Loading...
-              `}
+          {formError && (
+            <div style={{ color: 'red', marginTop: '10px' }}>
+              {formError}
             </div>
           )}
           <Button
@@ -106,8 +101,9 @@ const Login = () => {
             variant="contained"
             className={classes.submit}
             color="primary"
+            disabled={loading}
           >
-            LOG IN
+            {loading ? 'Logging in...' : 'LOG IN'}
           </Button>
           <Grid container>
             <Grid item>

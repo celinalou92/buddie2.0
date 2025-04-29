@@ -13,13 +13,10 @@ const AuthService = {
     isTokenExpired(token) {
         try {
             const decoded = decode(token);
-            if (decoded.exp < Date.now() / 1000) {
-                return true;
-            } else {
-                return false;
-            }
+            return decoded.exp < Date.now() / 1000;
         } catch (err) {
-            return false;
+            console.error("Failed to decode token:", err)
+            return true;
         }
     },
     
@@ -28,9 +25,7 @@ const AuthService = {
     },
     
     handleLogin(idToken) {
-       console.log("Logging in, saving token")
         localStorage.setItem('id_token', idToken);
-    
         window.location.assign('/dashboard');
     },
     
