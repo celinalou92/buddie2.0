@@ -17,26 +17,19 @@ const { typeDefs, resolvers } = schemas;
 const PORT = process.env.PORT || 8080;
 let initTime = new Date().getTime();
 
-const serverListen = (PORT) => {
-  let loadTime = new Date().getTime();
-  let timeToLoad = loadTime - initTime;
-
-  console.log("----------------",timeToLoad)
-
-  httpServer.listen({ port: PORT });
-
-  if (!PORT) {
-    throw new Error("No Port Set!");
-  }
-  return console.log("🚀 Apollo Server ready at port: ", PORT);
+const httpServerListen = () => {
+  return new Promise((resolve) => {
+    if (!PORT) {
+      throw new Error("No Port Set!");
+    }
+    httpServer.listen({ port: PORT }, resolve);
+  });
 };
 
 const StartApolloServer = async () => {
   console.log(`Starting Apollo Server`);
   const server = new ApolloServer({
-    // The GraphQL schema
     typeDefs,
-    // A map of functions which return data for the schema.
     resolvers,
     playground: true,
     plugins: [ApolloServerPluginDrainHttpServer({ httpServer })],
@@ -50,11 +43,16 @@ const StartApolloServer = async () => {
     expressMiddleware(server, {
       context: authMiddleware,
     })
-);
+  );
+
+let loadTime = new Date().getTime();
+let timeToLoad = loadTime - initTime;
+  console.log("----------------",timeToLoad)
+  console.log("🚀 Apollo Server ready at port: ", PORT);
 };
 
-runDBClient();
-StartApolloServer();
-serverListen(PORT);
+await runDBClient();
+await StartApolloServer();
+await httpServerListen()
 
 export default StartApolloServer;
