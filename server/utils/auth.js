@@ -11,7 +11,6 @@ export function signToken({ username, email, _id }) {
 }
 
 export function authMiddleware({ req }) {
-  // allows token to be sent via req.body, req.query, or headers
   let token = req.headers.authorization;
   const appPassword = req.headers.applicationpassword;
 
@@ -19,14 +18,16 @@ export function authMiddleware({ req }) {
     return req.body;
   }
 
-  // decode and attach user data to request object
   const verifyToken = jwt.verify(token, secret, (err, vt) => {
     if (err) {
       console.log("Invalid token", err)
+      return err;
+    } else {
+      return vt;
     }
-    return vt;
   });
-  req.user = verifyToken;
+
+  console.log("Token Validation Repsonse \n", verifyToken)
   const loginContext = {data:verifyToken.data, applicationPassword:appPassword};
   return loginContext;
 };
