@@ -1,6 +1,4 @@
-// created this after setting up our query in typeDefs.js
 import models from "../models/index.js";
-// import signin token
 import { signToken } from "../utils/auth.js";
 
 const { User, Task, Message } = models;

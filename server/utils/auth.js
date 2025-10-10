@@ -12,7 +12,6 @@ export function signToken({ username, email, _id }) {
 
 export function authMiddleware({ req }) {
   let token = req.headers.authorization;
-  const appPassword = req.headers.applicationpassword;
 
   if (!token || req.body.operationName === "AddUser") {
     return req.body;
@@ -27,7 +26,6 @@ export function authMiddleware({ req }) {
     }
   });
 
-  console.log("Token Validation Repsonse \n", verifyToken)
-  const loginContext = {data:verifyToken.data, applicationPassword:appPassword};
+  const loginContext = {data:verifyToken.data};
   return loginContext;
 };
