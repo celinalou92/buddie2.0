@@ -13,7 +13,7 @@ export function signToken({ username, email, _id }) {
 export function authMiddleware({ req }) {
   let token = req.headers.authorization;
 
-  if (!token || req.body.operationName === "AddUser") {
+  if (!token || req.body.operationName === "AddUser" || req.body.operationName ===  "login") {
     return req.body;
   }
 
