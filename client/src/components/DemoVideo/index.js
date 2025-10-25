@@ -3,7 +3,7 @@ import {
   Box,
   CardContent,
   Typography,
-} from "@material-ui/core";
+} from "@mui/material";
 
 const VideoIframe = () => (
   <>

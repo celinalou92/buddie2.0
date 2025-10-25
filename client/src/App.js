@@ -16,6 +16,16 @@ import NoMatch from './pages/NoMatch';
 import Signup from './pages/Signup';
 import SingleMessage from "./pages/SingleMessage";
 import Password from "./pages/Password";
+import { ThemeProvider } from '@mui/styles';
+import { StyledEngineProvider } from '@mui/material/styles';
+
+// const theme = createMuiTheme();
+
+// const useStyles = makeStyles((theme) => {
+//   root: {
+//     // some CSS that accesses the theme
+//   }
+// });
 
 const serverURI = process.env.REACT_APP_BACKEND_URI;
 const httpLink = new HttpLink({ uri: serverURI});
@@ -55,22 +65,26 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
+        <StyledEngineProvider injectFirst>
+      <ThemeProvider>
         <div className="flex-column justify-flex-start min-100-vh">
           <Header />
           <div className="container">
             <Switch>
               {/* <Route exact path="/" component={Password} /> */}
-              <Route exact path="/password" component={Password} />
-              <Route exact path="/dashboard" component={Home} />
+              {/* <Route exact path="/password" component={Password} /> */}
+              {/* <Route exact path="/dashboard" component={Home} /> */}
               <Route exact path="/login" component={Login} />
-              <Route exact path="/signup" component={Signup} />
-              <Route exact path="/message/:id" component={SingleMessage} />
+              {/* <Route exact path="/signup" component={Signup} /> */}
+              {/* <Route exact path="/message/:id" component={SingleMessage} /> */}
               <Route exact path="/" component={Login} />
               <Route component={NoMatch} />
             </Switch>
           </div>
           <Footer />
         </div>
+      </ThemeProvider>
+        </StyledEngineProvider>
       </Router>
     </ApolloProvider>
   );

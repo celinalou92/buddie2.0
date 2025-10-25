@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import { useMutation } from "@apollo/client";
 import { LOGIN_USER } from "../utils/mutations";
 import Auth from "../utils/auth";
-import CssBaseline from "@material-ui/core/CssBaseline";
-import TextField from "@material-ui/core/TextField";
-import { makeStyles } from "@material-ui/core/styles";
-import Container from "@material-ui/core/Container";
-import { Link, Grid, Button } from "@material-ui/core";
+import CssBaseline from "@mui/material/CssBaseline";
+import TextField from "@mui/material/TextField";
+import { makeStyles } from "@mui/styles";
+import Container from "@mui/material/Container";
+import { Link, Grid, Button } from "@mui/material";
 
 const Login = () => {
   const [formState, setFormState] = useState({ email: "", password: "" });
@@ -43,17 +43,17 @@ const Login = () => {
 
   const useStyles = makeStyles((theme) => ({
     paper: {
-      marginTop: theme.spacing(8),
+      // marginTop: theme.spacing(8),
       display: "flex",
       flexDirection: "column",
       alignItems: "center",
     },
     form: {
       width: "100%", 
-      marginTop: theme.spacing(3),
+      // marginTop: theme.spacing(3),
     },
     submit: {
-      margin: theme.spacing(5, 0, 2),
+      // margin: theme.spacing(5, 0, 2),
     },
   }));
 

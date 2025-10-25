@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import ChatIcon from "@material-ui/icons/Chat";
-import PersonIcon from "@material-ui/icons/Person";
+import ChatIcon from "@mui/icons-material/Chat";
+import PersonIcon from "@mui/icons-material/Person";
 import { QUERY_MESSAGES } from "../../utils/queries";
 import { useQuery } from "@apollo/client";
 

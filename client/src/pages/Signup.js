@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useMutation } from "@apollo/client";
 import { ADD_USER } from "../utils/mutations";
-import { makeStyles } from "@material-ui/core/styles";
-import {Container, Button, CssBaseline, TextField, Link, Grid} from "@material-ui/core";
+import { makeStyles } from "@mui/material/styles";
+import {Container, Button, CssBaseline, TextField, Link, Grid } from "@mui/material";
 
 const Signup = () => {
   const [addUser, { error, loading }] = useMutation(ADD_USER);
