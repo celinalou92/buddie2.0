@@ -67,7 +67,7 @@ function App() {
                   {/* <Route exact path="/password" component={Password} /> */}
                   {/* <Route exact path="/dashboard" component={Home} /> */}
                   <Route exact path="/login" component={Login} />
-                  {/* <Route exact path="/signup" component={Signup} /> */}
+                  <Route exact path="/signup" component={Signup} />
                   {/* <Route exact path="/message/:id" component={SingleMessage} /> */}
                   <Route exact path="/" component={Login} />
                   <Route component={NoMatch} />
