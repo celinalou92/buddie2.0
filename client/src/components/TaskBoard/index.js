@@ -1,4 +1,5 @@
 import TaskRow from "../TaskRow";
+import TaskForm from "../TaskForm";
 import { useQuery } from "@apollo/client";
 import { QUERY_TASKS } from "../../utils/queries";
 import AuthService from "../..//utils/auth";
@@ -32,18 +33,19 @@ const Taskboard = () => {
 
   return (
     <>
-      <table className="taskTable">
-        <thead className="cardHeader">
-          <tr>
-            <th scope="col">Assign</th>
-            <th scope="col">Task</th>
-            <th scope="col">Delete</th>
-          </tr>
-        </thead>
+      <thead className="cardHeader p-3">
+        <tr>
+          <th scope="col"><h4>Assign</h4></th>
+          <th scope="col"><h4>Task</h4></th>
+          <th scope="col"><h4>Delete</h4></th>
+        </tr>
+      </thead>
+      <table className="card">
         <tbody>
           <TaskRow tasks={tasks} />
         </tbody>
       </table>
+      <TaskForm />
     </>
   );
 };

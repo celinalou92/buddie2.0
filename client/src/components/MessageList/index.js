@@ -14,6 +14,7 @@ const MessageList = () => {
 
   return (
     <>
+    <div className="h-100">
       {messages &&
         messages.map((message) => (
           <div key={message._id} className="py-1 px-3">
@@ -30,6 +31,7 @@ const MessageList = () => {
             </div>
           </div>
         ))}
+        </div>
     </>
   );
 };
