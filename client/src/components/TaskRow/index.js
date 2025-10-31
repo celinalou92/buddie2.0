@@ -1,4 +1,3 @@
-import React from "react";
 import AssignMenu from "../AssignMenu";
 import DeleteButton from "../DeleteButton";
 

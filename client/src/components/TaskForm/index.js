@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useMutation } from "@apollo/client";
 import { ADD_TASK } from "../../utils/mutations";
 import { QUERY_TASKS } from "../../utils/queries";

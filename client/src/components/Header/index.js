@@ -1,6 +1,4 @@
-import React from "react";
 import { Link, useLocation } from "react-router-dom";
-
 import Auth from "../../utils/auth";
 import buddie_logo from "../../assets/images/buddie_logo.png";
 

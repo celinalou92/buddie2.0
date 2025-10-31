@@ -1,5 +1,4 @@
 import { useParams } from "react-router-dom";
-import React from "react";
 import { useQuery } from "@apollo/client";
 import { QUERY_MESSAGE } from "../utils/queries";
 import ReplyForm from "../components/ReplyForm";

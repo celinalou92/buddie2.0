@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import ChatIcon from "@mui/icons-material/Chat";
 import PersonIcon from "@mui/icons-material/Person";

@@ -1,5 +1,4 @@
 import { useMutation } from "@apollo/client";
-import React from "react";
 import { DELETE_TASK } from "../utils/mutations";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { QUERY_TASKS } from "../utils/queries";

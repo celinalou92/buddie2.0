@@ -1,4 +1,3 @@
-import React from "react";
 import TaskRow from "../TaskRow";
 import { useQuery } from "@apollo/client";
 import { QUERY_TASKS } from "../../utils/queries";

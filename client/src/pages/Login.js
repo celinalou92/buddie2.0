@@ -1,11 +1,8 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useMutation } from "@apollo/client";
 import { LOGIN_USER } from "../utils/mutations";
 import Auth from "../utils/auth";
-import CssBaseline from "@mui/material/CssBaseline";
-import TextField from "@mui/material/TextField";
-import Container from "@mui/material/Container";
-import { Link, Grid, Button } from "@mui/material";
+import { Link, Grid, Button, Container, TextField, CssBaseline } from "@mui/material";
 
 const Login = () => {
   const [formState, setFormState] = useState({ email: "", password: "" });

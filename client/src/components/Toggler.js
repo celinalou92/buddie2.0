@@ -1,5 +1,4 @@
 import { useMutation } from '@apollo/client';
-import React from 'react';
 import { UPDATE_TASK } from '../utils/mutations';
 
 const Toggler = ({ task }) => {
