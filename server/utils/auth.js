@@ -1,7 +1,9 @@
 import jwt from "jsonwebtoken"
-import { hash } from 'bcrypt';
+import dotenv from 'dotenv';
+dotenv.config();
 
-const secret = 'mysecretsshhhhh';
+
+const secret = process.env.JWT_SECRET;
 const expiration = '24hr';
 
 export function signToken({ username, email, _id }) {

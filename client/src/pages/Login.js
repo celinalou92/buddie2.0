@@ -100,7 +100,7 @@ const Login = () => {
           >
             {loading ? "Logging in..." : "LOG IN"}
           </Button>
-          <Grid container>``
+          <Grid container>
             <Grid item>
               <Link href="/signup" variant="body2">
                 {"Don't have an account? Sign Up"}
