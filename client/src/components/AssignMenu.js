@@ -28,6 +28,7 @@ const AssignMenu = ({ task }) => {
       value={assign}
       className="assign-input"
     >
+      <option>select user</option>
       {users &&
         users.map((user) => (
           <option key={user._id} value={user._id}>
