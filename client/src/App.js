@@ -14,7 +14,6 @@ import Login from "./pages/Login";
 import NoMatch from "./pages/NoMatch";
 import Signup from "./pages/Signup";
 import SingleMessage from "./pages/SingleMessage";
-import Password from "./pages/Password";
 import { ThemeProvider } from "@mui/styles";
 import { StyledEngineProvider, createTheme } from "@mui/material/styles";
 
@@ -63,12 +62,10 @@ function App() {
               <Header />
               <div className="container">
                 <Switch>
-                  {/* <Route exact path="/" component={Password} /> */}
-                  {/* <Route exact path="/password" component={Password} /> */}
-                  {/* <Route exact path="/dashboard" component={Home} /> */}
+                  <Route exact path="/dashboard" component={Home} />
                   <Route exact path="/login" component={Login} />
                   <Route exact path="/signup" component={Signup} />
-                  {/* <Route exact path="/message/:id" component={SingleMessage} /> */}
+                  <Route exact path="/message/:id" component={SingleMessage} />
                   <Route exact path="/" component={Login} />
                   <Route component={NoMatch} />
                 </Switch>
