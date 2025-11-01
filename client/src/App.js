@@ -7,52 +7,59 @@ import {
   ApolloLink,
   concat,
 } from "@apollo/client";
+import { useEffect, useState } from "react";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import Home from "./pages/Home";
-import Login from "./pages/Login";
-import NoMatch from "./pages/NoMatch";
-import Signup from "./pages/Signup";
-import SingleMessage from "./pages/SingleMessage";
+import Home from "./Home";
+import Login from "./Login";
+import NoMatch from "./NoMatch";
+import Signup from "./Signup";
+import SingleMessage from "./SingleMessage";
 import { ThemeProvider } from "@mui/styles";
 import { StyledEngineProvider, createTheme } from "@mui/material/styles";
 
 const theme = createTheme();
-
-const serverURI = process.env.REACT_APP_BACKEND_URI;
+const serverURI = process.env.NEXT_PUBLIC_BACKEND_URI;
 const httpLink = new HttpLink({ uri: serverURI });
 
-let token = localStorage.getItem("id_token");
+function App() {
+  const [client, setClient] = useState(null);
 
-const authMiddleware = new ApolloLink((operation, forward) => {
-  operation.setContext(({ headers = {} }) => ({
-    headers: {
-      ...headers,
-      ...(token && { authorization: token }),
-    },
-  }));
+  useEffect(() => {
+    const token = localStorage.getItem("id_token");
 
-  return forward(operation);
-});
+    const authMiddleware = new ApolloLink((operation, forward) => {
+      operation.setContext(({ headers = {} }) => ({
+        headers: {
+          ...headers,
+          ...(token && { authorization: token }),
+        },
+      }));
+      return forward(operation);
+    });
 
-const client = new ApolloClient({
-  cache: new InMemoryCache({
-    typePolicies: {
-      Query: {
-        fields: {
-          tasks: {
-            merge(existing = [], incoming) {
-              return incoming;
+    const apolloClient = new ApolloClient({
+      cache: new InMemoryCache({
+        typePolicies: {
+          Query: {
+            fields: {
+              tasks: {
+                merge(existing = [], incoming) {
+                  return incoming;
+                },
+              },
             },
           },
         },
-      },
-    },
-  }),
-  link: concat(authMiddleware, httpLink),
-});
+      }),
+      link: concat(authMiddleware, httpLink),
+    });
 
-function App() {
+    setClient(apolloClient);
+  }, []);
+
+  if (!client) return <div>Loading...</div>;
+
   return (
     <ApolloProvider client={client}>
       <Router>

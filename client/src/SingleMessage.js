@@ -1,9 +1,9 @@
 import { useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
-import { QUERY_MESSAGE } from "../utils/queries";
-import ReplyForm from "../components/ReplyForm";
-import ReplyList from "../components/ReplyList";
-import Auth from "../utils/auth";
+import { QUERY_MESSAGE } from "./utils/queries";
+import ReplyForm from "./components/ReplyForm";
+import ReplyList from "./components/ReplyList";
+import Auth from "./utils/auth";
 
 const SingleMessage = (props) => {
   const { id } = useParams();

@@ -17,3 +17,7 @@ out/
 
 # VSCode
 .vscode/
+
+# Next
+.next
+next-env.d.ts

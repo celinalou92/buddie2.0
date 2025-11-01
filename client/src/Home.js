@@ -1,7 +1,7 @@
-import Auth from "../utils/auth";
-import MessageList from "../components/MessageList";
-import MessageForm from "../components/MessageForm";
-import TaskBoard from "../components/TaskBoard";
+import Auth from "./utils/auth";
+import MessageList from "./components/MessageList";
+import MessageForm from "./components/MessageForm";
+import TaskBoard from "./components/TaskBoard";
 
 const Home = () => {
   const user = Auth.loggedIn();
