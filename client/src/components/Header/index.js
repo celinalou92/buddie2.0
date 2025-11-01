@@ -15,7 +15,7 @@ const Header = () => {
         <div className="container px-5 flex-row justify-space-between-lg justify-center align-center">
           <Link to="/dashboard">
             <img
-              src={buddie_logo}
+              src={buddie_logo.src}
               alt="buddie logo"
               className="buddieLogo"
               key="logoBuddie"
