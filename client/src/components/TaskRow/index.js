@@ -1,7 +1,8 @@
 import AssignMenu from "../AssignMenu";
 import DeleteButton from "../DeleteButton";
 
-const TaskRow = ({ tasks }) => {
+const TaskRow = ({ tasks, deleteTask }) => {
+
   return (
     <>
       {tasks &&
@@ -14,7 +15,7 @@ const TaskRow = ({ tasks }) => {
                 <p>{task.taskText}</p>
               </td>
               <td>
-                <DeleteButton task={task} />
+                <DeleteButton task={task} deleteTask={deleteTask}/>
             </td>
           </tr>
         ))}

@@ -3,12 +3,29 @@ import TaskForm from "../TaskForm";
 import { useQuery } from "@apollo/client";
 import { QUERY_TASKS } from "../../utils/queries";
 import AuthService from "../..//utils/auth";
+import { useMutation } from "@apollo/client";
+import { DELETE_TASK } from "../../utils/mutations";
 
 const Taskboard = () => {
   const { loading, data } = useQuery(QUERY_TASKS);
 
   const tasks = data?.tasks || [];
   const user = AuthService.loggedIn();
+
+  const [deleteTask, { error }] = useMutation(DELETE_TASK, {
+    update(cache, { data: { deleteTask } }) {
+      try {
+        const { tasks } = cache.readQuery({ query: QUERY_TASKS });
+        cache.writeQuery({
+          query: QUERY_TASKS,
+          data: { tasks: tasks.filter((task) => task._id !== deleteTask._id) },
+        });
+
+      } catch (error) {
+        console.log(error);
+      }
+    },
+  });
 
   if (loading) {
     return <div>Loading...</div>;
@@ -42,7 +59,7 @@ const Taskboard = () => {
       </thead>
       <table className="card">
         <tbody>
-          <TaskRow tasks={tasks} />
+          <TaskRow tasks={tasks} deleteTask={deleteTask}/>
         </tbody>
       </table>
       <TaskForm />
